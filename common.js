@@ -116,15 +116,6 @@
             return this;
         };
 
-        this.getHeight = function () {
-            return el.offsetHeight;
-        };
-
-
-        this.getWidth = function () {
-            return el.offsetWidth;
-        };
-
         // Remove element from DOM
         this.remove = function () {
             el.remove();
@@ -166,25 +157,35 @@
         };
 
         // Handlers
+        // Insert time of video
+        el.addEventListener('loadedmetadata', function () {
+            var played = self.getNormalDuration();
+            time.textContent = played.minutes + ':' + played.seconds;
+        }, false);
 
+        // Change volume
         volume.addEventListener('change', function () {
             self.changeVolume(this.value);
         }, false);
 
+        // Mute video
         mute.addEventListener('click', function () {
             self.mute();
             this.classList.toggle('controls__mute_on');
         }, false);
 
+        // Play - Pause
         play.addEventListener('click', function () {
             self.playPause();
             self.togglePlayClass();
         }, false);
 
+        // Toggle class of Play button
         el.addEventListener('ended', function () {
             self.togglePlayClass();
         });
 
+        // Update progress bar
         el.addEventListener('timeupdate', function () {
             var played = self.getNormalDuration(el.currentTime);
 
@@ -192,6 +193,7 @@
             self.updateProgressbar();
         }, false);
 
+        // Change video position by click on progress bar
         progress.addEventListener('click', function (e) {
             var coords = Math.floor((100 / this.offsetWidth) * e.offsetX);
 
@@ -203,6 +205,7 @@
             }
         }, false);
 
+        // Go to Fullscreen view
         fullScreen.addEventListener('click', function () {
             self.fullScreen();
         }, false);
