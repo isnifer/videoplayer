@@ -18,9 +18,13 @@
         this.init = (function () {
 
             var wrapper = doc.createElement('div'),
-                controls = doc.createElement('div');
+                controls = doc.createElement('div'),
+                title = doc.createElement('p');
 
             wrapper.classList.add('video');
+
+            title.classList.add('video__title');
+            title.textContent = video.el.title;
 
             controls.classList.add('controls');
             controls.innerHTML =
@@ -37,6 +41,7 @@
                     '<span class="controls__item controls__fullscreen controls__fullscreen_' + video.id + '"></span>' +
                 '</div>';
 
+            wrapper.appendChild(title);
             wrapper.appendChild(el);
             wrapper.appendChild(controls);
 
