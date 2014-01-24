@@ -180,6 +180,10 @@
             self.togglePlayClass();
         }, false);
 
+        el.addEventListener('ended', function () {
+            self.togglePlayClass();
+        });
+
         el.addEventListener('timeupdate', function () {
             self.updateProgressbar();
             var played = self.getNormalDuration(el.currentTime);
