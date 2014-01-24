@@ -9,15 +9,16 @@
 
         var el = video.el,
             self = this,
+            doc = document,
             tempVolume = el.volume,
             getControl = function (selector) {
-                return document.querySelector(selector + '_' +  video.id);
+                return doc.querySelector(selector + '_' +  video.id);
             };
 
         this.init = (function () {
 
-            var wrapper = document.createElement('div'),
-                controls = document.createElement('div');
+            var wrapper = doc.createElement('div'),
+                controls = doc.createElement('div');
 
             wrapper.classList.add('video');
 
@@ -39,7 +40,7 @@
             wrapper.appendChild(el);
             wrapper.appendChild(controls);
 
-            document.body.appendChild(wrapper);
+            doc.body.appendChild(wrapper);
 
         }());
 
@@ -185,15 +186,18 @@
         });
 
         el.addEventListener('timeupdate', function () {
-            self.updateProgressbar();
             var played = self.getNormalDuration(el.currentTime);
+
             time.textContent = played.minutes + ':' + played.seconds;
+            self.updateProgressbar();
         }, false);
 
         progress.addEventListener('click', function (e) {
             var coords = Math.floor((100 / this.offsetWidth) * e.offsetX);
+
             self.goToPosition(coords);
             this.value = coords;
+
             if (el.paused) {
                 el.play();
             }
