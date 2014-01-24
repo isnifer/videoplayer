@@ -1,23 +1,27 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>JS</title>
-	<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title>JS</title>
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-	<!-- <video src="video.mp4" controls="true" preload="true"></video> -->
-	<div class="controls">
-		<span class="controls__play controls__play_0" style="cursor: pointer;">Play/Pause</span>
-		<span class="controls__mute controls__mute_0" style="cursor: pointer;">
-			Mute
-		</span>
-		<input type="range" class="controls__volume controls__volume_0" max="1" min="0" step="0.01" value="1">
-		<progress class="controls__progress controls__progress_0" max="100" value="0"></progress>
-	</div>
+    <div class="b-page">
 
-	<script src="common.js"></script>
-	
+        <h1 class="b-page__header">HTML5 Video Player</h1>
+
+        <video src="video.mp4" preload="auto" width="460"></video>
+        <video src="video_2.mp4" preload="auto" width="460"></video>
+        <video src="video_3.mp4" preload="auto" width="460"></video>
+        <video src="video_4.mp4" preload="auto" width="460"></video>
+        <video src="video_5.mp4" preload="auto" width="460"></video>
+        <video src="video_6.mp4" preload="auto" width="460"></video>
+
+    </div>
+
+    <script src="common.js"></script>
+
 </body>
 </html>
