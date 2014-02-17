@@ -1,0 +1,244 @@
+@import url('http://fonts.googleapis.com/css?family=PT+Sans:400,700');
+*{
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body{
+  font: normal 16px 'PT Sans';
+
+  height: 100%;
+}
+body{
+  padding: 20px;
+
+  background: #7f8c8d;
+}
+.page__title{
+  font-size: 40px;
+  font-weight: bold;
+  line-height: 1;
+
+  display: inline-block;
+
+  margin: 0 0 10px;
+  margin-right: 20px;
+
+  color: #e67e22;
+  text-shadow: 2px 2px 2px rgba(0,0,0,.6);
+}
+.page__link{
+  font-size: 1.125em;
+  font-weight: bold;
+
+  -moz-transition: text-shadow ease .5s;
+  transition: text-shadow ease .5s;
+  text-decoration: none;
+
+  color: #f1c40f;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.4);
+}
+.page__link:hover{
+  text-shadow: 2px 2px 2px rgba(0,0,0,.7);
+}
+/* Video */
+.video{
+  display: inline-block;
+
+  width: 460px;
+  margin: 0 50px 50px 0;
+
+  vertical-align: top;
+
+  background: #0a0a0a;
+  box-shadow: 2px 2px 2px #2c3e50;
+}
+.video__title{
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+
+  margin: 0;
+
+  text-align: center;
+
+  color: #fff;
+}
+.video video{
+  position: relative;
+
+  width: 460px;
+  margin-bottom: -4px;
+}
+/* Controls */
+.controls{
+  position: relative;
+
+  width: 460px;
+  padding: 5px;
+}
+.controls__elements{
+  height: 50px;
+  padding: 8px 0 0;
+}
+.controls__item{
+  display: inline-block;
+
+  vertical-align: top;
+}
+.controls__play{
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+  text-indent: -9999px;
+
+  border-radius: 2px;
+  background: url('../img/play.png') no-repeat -3px -2px;
+}
+.controls__play:hover{
+  background-position: -3px -47px;
+}
+.controls__play:active{
+  background-position: -3px -93px;
+}
+.controls__play_paused{
+  background-position: -53px -2px;
+}
+.controls__play_paused:hover{
+  background-position: -53px -47px;
+}
+.controls__play_paused:active{
+  background-position: -53px -93px;
+}
+.controls__audio-block{
+  width: 156px;
+  height: 40px;
+  padding: 0 5px;
+}
+.controls__mute{
+  display: inline-block;
+  float: left;
+
+  width: 40px;
+  height: 40px;
+
+  cursor: pointer;
+  vertical-align: top;
+  text-indent: -9999px;
+
+  background: url('../img/mute.png') no-repeat 0 0;
+}
+.controls__mute:hover{
+  background-position: 0 -40px;
+}
+.controls__mute:active{
+  background-position: 0 -80px;
+}
+.controls__mute_on{
+  background-position: -40px 0;
+}
+.controls__mute_on:hover{
+  background-position: -40px -40px;
+}
+.controls__mute_on:hover{
+  background-position: -40px -80px;
+}
+.controls__range-wrapper{
+  display: inline-block;
+
+  width: 106px;
+  height: 40px;
+  padding: 8px 7px;
+
+  vertical-align: top;
+
+  background: url('../img/volume-bg.png') no-repeat 0 -2px;
+}
+.controls__volume{
+  position: relative;
+
+  width: 80px;
+  height: 8px;
+
+  cursor: pointer;
+
+  border-radius: 4px;
+  outline: none;
+  background: url('../img/progress.png') repeat-x 0 0;
+
+  -webkit-appearance: none;
+}
+.controls__volume::-webkit-slider-container{
+  width: 80px;
+  height: 8px;
+
+  border: 1px solid #373737;
+  border-radius: 4px;
+  background: url('../img/progress.png') repeat-x 0 0;
+}
+.controls__volume::-webkit-slider-runnable-track{
+  width: 50%;
+  height: 7px;
+
+  border-radius: 3px;
+  background: url('../img/volume-value.png') repeat-x 0 0;
+
+  -webkit-user-modify: read-write !important;
+}
+.controls__volume::-webkit-slider-thumb{
+  position: relative;
+  top: -5px;
+
+  width: 16px;
+  height: 18px;
+
+  border-radius: 50%;
+  background: url('../img/volume-handler.png') no-repeat -1px 0;
+
+  -webkit-appearance: none;
+}
+.controls__progress{
+  display: block;
+
+  width: 100%;
+  height: 5px;
+
+  cursor: pointer;
+  vertical-align: top;
+
+  border: 0;
+}
+.controls__progress::-webkit-progress-inner-elemen{
+  background: #252525;
+}
+.controls__progress::-webkit-progress-bar{
+  background: #373737;
+}
+.controls__progress::-webkit-progress-value{
+  background: #db5207;
+}
+.controls__time{
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 38px;
+
+  color: #fff;
+}
+.controls__fullscreen{
+  float: right;
+
+  width: 42px;
+  height: 40px;
+
+  cursor: pointer;
+
+  background: url('../img/fullscreen.png') no-repeat -2px -2px;
+}
+.controls__fullscreen:hover{
+  background-position: -2px -52px;
+}
+.controls__fullscreen:active{
+  background-position: -2px -102px;
+}

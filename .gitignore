@@ -1,5 +1,7 @@
 .idea
+.ftppass
 *.mp4
 *.ogv
 *.webm
 readme.html
+node_modules

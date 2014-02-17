@@ -1,0 +1,203 @@
+@import url("http://fonts.googleapis.com/css?family=PT+Sans:400,700");
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  font: normal 16px "PT Sans";
+}
+body {
+  padding: 20px;
+  background: #7f8c8d;
+}
+.page__title {
+  display: inline-block;
+  margin: 0 0 10px;
+  margin-right: 20px;
+  color: #e67e22;
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+  font-weight: bold;
+  font-size: 40px;
+  line-height: 1;
+}
+.page__link {
+  color: #f1c40f;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.4);
+  font-weight: bold;
+  font-size: 1.125em;
+  -moz-transition: text-shadow ease 0.5s;
+  transition: text-shadow ease 0.5s;
+}
+.page__link:hover {
+  text-shadow: 2px 2px 2px rgba(0,0,0,0.7);
+}
+/* Video */
+.video {
+  display: inline-block;
+  margin: 0 50px 50px 0;
+  width: 460px;
+  background: #0a0a0a;
+  box-shadow: 2px 2px 2px #2c3e50;
+  vertical-align: top;
+}
+.video__title {
+  margin: 0;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.video video {
+  margin-bottom: -4px;
+  position: relative;
+  width: 460px;
+}
+/* Controls */
+.controls {
+  position: relative;
+  padding: 5px;
+  width: 460px;
+}
+.controls__elements {
+  padding: 8px 0 0;
+  height: 50px;
+}
+.controls__item {
+  display: inline-block;
+  vertical-align: top;
+}
+.controls__play {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  text-indent: -9999px;
+  background: url("../img/play.png") no-repeat -3px -2px;
+  cursor: pointer;
+}
+.controls__play:hover {
+  background-position: -3px -47px;
+}
+.controls__play:active {
+  background-position: -3px -93px;
+}
+.controls__play_paused {
+  background-position: -53px -2px;
+}
+.controls__play_paused:hover {
+  background-position: -53px -47px;
+}
+.controls__play_paused:active {
+  background-position: -53px -93px;
+}
+.controls__audio-block {
+  padding: 0 5px;
+  width: 156px;
+  height: 40px;
+}
+.controls__mute {
+  display: inline-block;
+  float: left;
+  width: 40px;
+  height: 40px;
+  background: url("../img/mute.png") no-repeat 0 0;
+  vertical-align: top;
+  text-indent: -9999px;
+  cursor: pointer;
+}
+.controls__mute:hover {
+  background-position: 0 -40px;
+}
+.controls__mute:active {
+  background-position: 0 -80px;
+}
+.controls__mute_on {
+  background-position: -40px 0;
+}
+.controls__mute_on:hover {
+  background-position: -40px -40px;
+}
+.controls__mute_on:hover {
+  background-position: -40px -80px;
+}
+.controls__range-wrapper {
+  display: inline-block;
+  padding: 8px 7px;
+  width: 106px;
+  height: 40px;
+  background: url("../img/volume-bg.png") no-repeat 0 -2px;
+  vertical-align: top;
+}
+.controls__volume {
+  position: relative;
+  width: 80px;
+  height: 8px;
+  outline: none;
+  border-radius: 4px;
+  background: url("../img/progress.png") repeat-x 0 0;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.controls__volume::-webkit-slider-container {
+  width: 80px;
+  height: 8px;
+  border: 1px solid #373737;
+  border-radius: 4px;
+  background: url("../img/progress.png") repeat-x 0 0;
+}
+.controls__volume::-webkit-slider-runnable-track {
+  width: 50%;
+  height: 7px;
+  border-radius: 3px;
+  background: url("../img/volume-value.png") repeat-x 0 0;
+  -webkit-user-modify: read-write !important;
+}
+.controls__volume::-webkit-slider-thumb {
+  position: relative;
+  top: -5px;
+  width: 16px;
+  height: 18px;
+  border-radius: 50%;
+  background: url("../img/volume-handler.png") no-repeat -1px 0;
+  -webkit-appearance: none;
+}
+.controls__progress {
+  display: block;
+  width: 100%;
+  height: 5px;
+  border: 0;
+  vertical-align: top;
+  cursor: pointer;
+}
+.controls__progress::-webkit-progress-inner-elemen {
+  background: #252525;
+}
+.controls__progress::-webkit-progress-bar {
+  background: #373737;
+}
+.controls__progress::-webkit-progress-value {
+  background: #db5207;
+}
+.controls__time {
+  color: #fff;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 38px;
+}
+.controls__fullscreen {
+  float: right;
+  width: 42px;
+  height: 40px;
+  background: url("../img/fullscreen.png") no-repeat -2px -2px;
+  cursor: pointer;
+}
+.controls__fullscreen:hover {
+  background-position: -2px -52px;
+}
+.controls__fullscreen:active {
+  background-position: -2px -102px;
+}
