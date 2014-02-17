@@ -31,18 +31,15 @@
      * */
     Video.prototype.getHumanReadableTime = function (time) {
         var dirtyTime = (time) ? time : this.elem.duration,
-            hours = parseInt(dirtyTime / 3600)
-            minutes = (hours > 0) ? dirtyTime - hours * 3600 : parseInt(dirtyTime / 60),
-            seconds = parseInt(dirtyTime - minutes * 60);
+            hours = parseInt(dirtyTime / 3600),
+            minutes = (hours > 0) ? parseInt((dirtyTime - hours * 3600) / 60) : parseInt(dirtyTime / 60),
+            seconds = (hours > 0) ? parseInt(dirtyTime - hours * 3600 - minutes * 60) : parseInt(dirtyTime - minutes * 60);
 
         hours = (hours < 10) ? '0' + hours : hours;
         minutes = (minutes < 10) ? '0' + minutes : minutes;
         seconds = (seconds < 10) ? '0' + seconds : seconds;
 
-        if (hours > 0) {
-            return hours + ':' + minutes + ':' + seconds;    
-        }
-        return minutes + ':' + seconds;
+        return hours + ':' + minutes + ':' + seconds;
     };
 
     // Play or Pause video
@@ -227,7 +224,7 @@
 
         // Update progress bar
         this.elem.addEventListener('timeupdate', function () {
-            time.textContent = self.getHumanReadableTime(self.elem.currentTime);
+            time.textContent = self.getHumanReadableTime(this.currentTime);
             self.updateProgressbar(progress);
         }, false);
 
