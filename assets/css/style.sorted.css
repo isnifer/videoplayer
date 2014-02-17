@@ -15,6 +15,18 @@ body{
 
   background: #7f8c8d;
 }
+/* Page */
+html,
+body{
+  font: normal 16px 'PT Sans';
+
+  height: 100%;
+}
+body{
+  padding: 20px;
+
+  background: #7f8c8d;
+}
 .page__title{
   font-size: 40px;
   font-weight: bold;

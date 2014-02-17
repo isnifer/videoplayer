@@ -13,6 +13,16 @@ body {
   padding: 20px;
   background: #7f8c8d;
 }
+/* Page */
+html,
+body {
+  height: 100%;
+  font: normal 16px "PT Sans";
+}
+body {
+  padding: 20px;
+  background: #7f8c8d;
+}
 .page__title {
   display: inline-block;
   margin: 0 0 10px;

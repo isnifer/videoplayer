@@ -77,10 +77,6 @@
         this.elem.currentTime = parseInt((percents / 100) * this.elem.duration);
     };
 
-    Video.prototype.togglePlayClass = function (play) {
-        play.classList.toggle('controls__play_paused');
-    };
-
     Video.prototype.fullScreen = function () {
         if(this.elem.requestFullscreen) {
             this.elem.requestFullscreen();
@@ -219,7 +215,7 @@
         // Play - Pause
         play.addEventListener('click', function () {
             self.playPause();
-            self.togglePlayClass(this);
+            this.classList.toggle('controls__play_paused');
         }, false);
 
         // Toggle class of Play button
