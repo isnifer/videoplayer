@@ -15,8 +15,6 @@ body{
 }
 body{
   padding: 20px;
-
-  background: #7f8c8d;
 }
 .page__title{
   font-size: 40px;
@@ -54,7 +52,6 @@ body{
 
   vertical-align: top;
 
-  background: #0a0a0a;
   box-shadow: 2px 2px 2px #2c3e50;
 }
 .video__title{
@@ -67,12 +64,15 @@ body{
   text-align: center;
 
   color: #fff;
+  background: #0a0a0a;
 }
 .video video{
   position: relative;
 
   width: 460px;
   margin-bottom: -4px;
+
+  background: #0a0a0a;
 }
 /* Controls */
 .controls{
@@ -80,6 +80,8 @@ body{
 
   width: 460px;
   padding: 5px;
+
+  background: #0a0a0a;
 }
 .controls__elements{
   height: 50px;
@@ -247,10 +249,11 @@ body{
 }
 /* Controls */
 .controls-skin_1{
-  position: relative;
+  background: -moz-linear-gradient(top, rgba(0,0,0,.01) 0%, rgba(0,0,0,.2) 50%, rgba(0,0,0,.29) 100%);
+  background: -webkit-linear-gradient(top, rgba(0,0,0,.01) 0%, rgba(0,0,0,.2) 50%, rgba(0,0,0,.29) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,.01) 0%, rgba(0,0,0,.2) 50%, rgba(0,0,0,.29) 100%);
 
-  width: 460px;
-  padding: 5px;
+  filter: unqoute('progid:DXImageTransform.Microsoft.gradient( startColorstr=\'#03000000\', endColorstr=\'#4a000000\',GradientType=0 )');
 }
 .controls-skin_1 .controls__elements{
   height: 50px;

@@ -14,7 +14,6 @@ body {
 }
 body {
   padding: 20px;
-  background: #7f8c8d;
 }
 .page__title {
   display: inline-block;
@@ -43,7 +42,6 @@ body {
   display: inline-block;
   margin: 0 50px 50px 0;
   width: 460px;
-  background: #0a0a0a;
   box-shadow: 2px 2px 2px #2c3e50;
   vertical-align: top;
 }
@@ -54,17 +52,20 @@ body {
   font-weight: bold;
   font-size: 16px;
   line-height: 1.5;
+  background: #0a0a0a;
 }
 .video video {
   margin-bottom: -4px;
   position: relative;
   width: 460px;
+  background: #0a0a0a;
 }
 /* Controls */
 .controls {
   position: relative;
   padding: 5px;
   width: 460px;
+  background: #0a0a0a;
 }
 .controls__elements {
   padding: 8px 0 0;
@@ -206,9 +207,10 @@ body {
 }
 /* Controls */
 .controls-skin_1 {
-  position: relative;
-  padding: 5px;
-  width: 460px;
+  background: -moz-linear-gradient(top, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.29) 100%);
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.29) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.29) 100%);
+  filter: unqoute("progid:DXImageTransform.Microsoft.gradient( startColorstr='#03000000', endColorstr='#4a000000',GradientType=0 )");
 }
 .controls-skin_1 .controls__elements {
   padding: 8px 0 0;
