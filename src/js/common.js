@@ -25,19 +25,23 @@
     /*
      * Function returns Human Readable video duration
      *
-     * @param {number} data - time in seconds
+     * @param {number} time - time in seconds
      *
-     * @returns {object} - normalized minutes and seconds (minutes: mm, seconds: ss)
-     *
+     * @returns {object} - Human Readable time format mm:ss
      * */
-    Video.prototype.getHumanReadableTime = function (time, ctx) {
-        var dirtyTime = (time) ? time : ctx.elem.duration,
-            minutes = parseInt(dirtyTime / 60),
+    Video.prototype.getHumanReadableTime = function (time) {
+        var dirtyTime = (time) ? time : this.elem.duration,
+            hours = parseInt(dirtyTime / 3600)
+            minutes = (hours > 0) ? dirtyTime - hours * 3600 : parseInt(dirtyTime / 60),
             seconds = parseInt(dirtyTime - minutes * 60);
 
+        hours = (hours < 10) ? '0' + hours : hours;
         minutes = (minutes < 10) ? '0' + minutes : minutes;
         seconds = (seconds < 10) ? '0' + seconds : seconds;
 
+        if (hours > 0) {
+            return hours + ':' + minutes + ':' + seconds;    
+        }
         return minutes + ':' + seconds;
     };
 
@@ -196,7 +200,7 @@
         // Handlers
         // Insert time of video
         this.elem.addEventListener('loadedmetadata', function () {
-            time.textContent = self.getHumanReadableTime(null, self);
+            time.textContent = self.getHumanReadableTime();
         }, false);
 
         // Change volume
@@ -218,12 +222,12 @@
 
         // Toggle class of Play button
         this.elem.addEventListener('ended', function () {
-            self.togglePlayClass(this);
+            play.classList.toggle('controls__play_paused');
         });
 
         // Update progress bar
         this.elem.addEventListener('timeupdate', function () {
-            time.textContent = self.getHumanReadableTime(self.elem.currentTime, self);
+            time.textContent = self.getHumanReadableTime(self.elem.currentTime);
             self.updateProgressbar(progress);
         }, false);
 
