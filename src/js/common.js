@@ -53,13 +53,12 @@
     };
 
     // Video mute or back to previous volume
-    Video.prototype.mute = function () {
-        if (this.el.volume !== 0) {
-            this.el.volume = 0;
-            this.volume.value = 0;
+    Video.prototype.mute = function (volumeButton) {
+        if (this.elem.volume !== 0) {
+            this.elem.volume = 0;
+            volumeButton.value = 0;
         } else {
-            this.el.volume = tempVolume;
-            this.volume.value = tempVolume;
+            this.elem.volume = volumeButton.value = this.volume;
         }
         return this;
     };
@@ -218,7 +217,7 @@
 
         // Mute video
         mute.addEventListener('click', function () {
-            self.mute();
+            self.mute(volume);
             this.classList.toggle('controls__mute_on');
         }, false);
 
