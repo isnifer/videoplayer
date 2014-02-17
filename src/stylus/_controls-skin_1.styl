@@ -1,117 +1,111 @@
+@import url("http://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,cyrillic")
+
 .controls-skin_1
-  background -moz-linear-gradient(top, rgba(0,0,0,0.01) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.29) 100%)
-  background -webkit-linear-gradient(top, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.29) 100%)
-  background linear-gradient(to bottom, rgba(0,0,0,0.01) 0%,rgba(0,0,0,0.2) 50%,rgba(0,0,0,0.29) 100%)
-  filter unqoute("progid:DXImageTransform.Microsoft.gradient( startColorstr='#03000000', endColorstr='#4a000000',GradientType=0 )")
+  height 37px
+  padding 0
 
   .controls
 
     &__elements
-      padding 8px 0 0
-      height 50px
+      height 28px
+      padding 7px
+      background -moz-linear-gradient(top, rgba(65,65,65,0.91) 0%, rgba(34,34,34,0.9) 4%, rgba(31,31,31,0.9) 16%, rgba(7,7,7,0.89) 72%, rgba(2,2,2,0.88) 100%)
+      background -webkit-linear-gradient(top, rgba(65,65,65,0.91) 0%,rgba(34,34,34,0.9) 4%,rgba(31,31,31,0.9) 16%,rgba(7,7,7,0.89) 72%,rgba(2,2,2,0.88) 100%)
+      background linear-gradient(to bottom, rgba(65,65,65,0.91) 0%,rgba(34,34,34,0.9) 4%,rgba(31,31,31,0.9) 16%,rgba(7,7,7,0.89) 72%,rgba(2,2,2,0.88) 100%)
 
     &__item
       display inline-block
       vertical-align top
 
     &__play
-      width 40px
-      height 40px
-      border-radius 2px
+      width 20px
+      height 16px
+      border-radius 0
       text-indent -9999px
-      background url(../img/play.png) no-repeat -3px -2px
+      background url(../img/skin_1/play.png) no-repeat 0 0
       cursor pointer
 
-      &:hover
-        background-position -3px -47px
-
-      &:active
-        background-position -3px -93px
+      &:hover, &:active
+        background-position 0 0
 
       &_paused
-        background-position -53px -2px
+        background-position 0 -16px
 
-        &:hover
-          background-position -53px -47px
-
-        &:active
-          background-position -53px -93px
+        &:hover, &:active
+          background-position 0 -16px
 
     &__audio-block
       padding 0 5px
-      width 156px
-      height 40px
+      width 120px
+      height 15px
 
     &__mute
       display inline-block
       float left
-      width 40px
-      height 40px
-      background url(../img/mute.png) no-repeat 0 0
+      width 22px
+      height 16px
+      background url(../img/skin_1/mute.png) no-repeat 0 0
       vertical-align top
       text-indent -9999px
       cursor pointer
 
-      &:hover
-        background-position 0 -40px
-
-      &:active
-        background-position 0 -80px
+      &:hover, &:active
+        background-position 1 0
 
       &_on
-        background-position -40px 0
+        background-position 0 -16px
 
-        &:hover
-          background-position -40px -40px
-
-        &:hover
-          background-position -40px -80px
+        &:hover, &:active
+          background-position 0 -16px
 
     &__range-wrapper
       display inline-block
-      padding 8px 7px
-      width 106px
-      height 40px
-      background url(../img/volume-bg.png) no-repeat 0 -2px
+      width 87px
+      height 15px
       vertical-align top
+      background none
+      padding 1px 0 1px 7px
 
     &__volume
       position relative
       width 80px
-      height 8px
+      height 14px
       outline none
-      border-radius 4px
-      background url(../img/progress.png) repeat-x 0 0
+      border-radius 3px
       cursor pointer
+      background none
       -webkit-appearance none
 
       &::-webkit-slider-container
         width 80px
-        height 8px
-        border 1px solid #373737
-        border-radius 4px
-        background url(../img/progress.png) repeat-x 0 0
+        height 6px
+        border-radius 3px
+        border 0
+        background url(../img/skin_1/volume-track.png) repeat-x 0 0
 
       &::-webkit-slider-runnable-track
         width 50%
-        height 7px
+        height 6px
+        position relative
+        top 1px
         border-radius 3px
         background #e74c3c
         -webkit-user-modify read-write !important
 
       &::-webkit-slider-thumb
         position relative
-        top -5px
-        width 16px
-        height 18px
-        border-radius 50%
-        background url(../img/volume-handler.png) no-repeat -1px 0
+        top -4px
+        width 5px
+        height 14px
+        border-radius 0
+        background url(../img/skin_1/volume-handler.png) no-repeat 0 0
         -webkit-appearance none
 
     &__progress
       display block
       width 100%
-      height 5px
+      height 8px
+      margin-bottom 1px
       border 0
       vertical-align top
       cursor pointer
@@ -120,26 +114,22 @@
         background #252525
 
       &::-webkit-progress-bar
-        background #373737
+        background url(../img/skin_1/progress.png) repeat-x 0 0
 
       &::-webkit-progress-value
-        background #db5207
+        background url(../img/skin_1/progress-value.png) repeat-x 0 0
 
     &__time
-      color #fff
-      font-weight bold
-      font-size 18px
-      line-height 38px
+      color #8c8c8c
+      font-weight 300
+      font-size 11px
+      line-height 15px
 
     &__fullscreen
-      float right
-      width 42px
-      height 40px
-      background url(../img/fullscreen.png) no-repeat -2px -2px
+      position absolute
+      right 0
+      bottom 0
+      width 34px
+      height 28px
+      background url(../img/skin_1/fullscreen.png) no-repeat 0 0
       cursor pointer
-
-      &:hover
-        background-position -2px -52px
-
-      &:active
-        background-position -2px -102px

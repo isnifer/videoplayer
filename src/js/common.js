@@ -92,6 +92,7 @@
 
     Video.prototype.init = function () {
         var self = this,
+            videoParent = self.elem.parentNode,
             wrapper = document.createElement('div'),
             controls = document.createElement('div'),
             title = document.createElement('p'),
@@ -155,6 +156,14 @@
                 ]
             }),
 
+            // Time indicator
+            allTime = this.createControl({
+                tag: 'span',
+                attrs: [
+                    {'name': 'class', 'value': 'controls__item controls__time controls__time-overall'},
+                ]
+            }),
+
             // Fullscreen Button
             fullscreen = this.createControl({
                 tag: 'span',
@@ -186,23 +195,23 @@
         elements.appendChild(play);
         elements.appendChild(audio);
         elements.appendChild(time);
+        elements.appendChild(allTime);
         elements.appendChild(fullscreen);
 
         controls.appendChild(progress);
         controls.appendChild(elements);
 
-        wrapper.appendChild(title);
-        wrapper.appendChild(this.elem);
-        wrapper.appendChild(controls);
-
         wrapper.classList.add('video');
 
-        document.body.appendChild(wrapper);
+        wrapper.appendChild(title);
+        videoParent.insertBefore(wrapper, this.elem);
+        wrapper.appendChild(this.elem);
+        wrapper.appendChild(controls);
 
         // Handlers
         // Insert time of video
         this.elem.addEventListener('loadedmetadata', function () {
-            time.textContent = self.getHumanReadableTime();
+            allTime.textContent = ' / ' + self.getHumanReadableTime();
         }, false);
 
         // Change volume
@@ -242,6 +251,9 @@
 
             if (self.elem.paused) {
                 self.elem.play();
+                play.classList.remove('controls__play_paused');
+            } else {
+                play.classList.add('controls__play_paused');
             }
         }, false);
 
