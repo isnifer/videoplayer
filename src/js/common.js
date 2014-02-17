@@ -8,6 +8,7 @@
     function Video (video) {
         this.elem = video;
         this.volume = this.elem.volume;
+        this.skin = video.getAttribute('data-skin');
 
         this.init();
     }
@@ -172,6 +173,10 @@
         title.textContent = this.elem.title;
 
         controls.classList.add('controls');
+
+        if (this.skin) {
+            controls.classList.add('controls-skin_' + this.skin);
+        }
 
         rangeWrapper.appendChild(volume);
 
