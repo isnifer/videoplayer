@@ -82,14 +82,14 @@
     };
 
     Video.prototype.fullScreen = function () {
-        if(el.requestFullscreen) {
-            el.requestFullscreen();
-        } else if(el.mozRequestFullScreen) {
-            el.mozRequestFullScreen();
-        } else if(el.webkitRequestFullscreen) {
-            el.webkitRequestFullscreen();
-        } else if(el.msRequestFullscreen) {
-            el.msRequestFullscreen();
+        if(this.elem.requestFullscreen) {
+            this.elem.requestFullscreen();
+        } else if(this.elem.mozRequestFullScreen) {
+            this.elem.mozRequestFullScreen();
+        } else if(this.elem.webkitRequestFullscreen) {
+            this.elem.webkitRequestFullscreen();
+        } else if(this.elem.msRequestFullscreen) {
+            this.elem.msRequestFullscreen();
         }
     };
 
@@ -115,7 +115,6 @@
                 tag: 'span',
                 attrs: [
                     {'name': 'class', 'value': 'controls__item controls__play'},
-                    {'name': 'data-video', 'value': this.id}
                 ]
             }),
             audio = this.createControl({
@@ -130,7 +129,6 @@
                 tag: 'span',
                 attrs: [
                     {'name': 'class', 'value': 'controls__mute'},
-                    {'name': 'data-video', 'value': this.id}
                 ]
             }),
             rangeWrapper = this.createControl({
@@ -146,7 +144,6 @@
                 attrs: [
                     {'name': 'class', 'value': 'controls__volume'},
                     {'name': 'type', 'value': 'range'},
-                    {'name': 'data-video', 'value': this.id},
                     {'name': 'min', 'value': 0},
                     {'name': 'max', 'value': 1},
                     {'name': 'step', 'value': 0.01},
@@ -159,7 +156,6 @@
                 tag: 'span',
                 attrs: [
                     {'name': 'class', 'value': 'controls__item controls__time'},
-                    {'name': 'data-video', 'value': this.id}
                 ]
             }),
 
@@ -168,7 +164,6 @@
                 tag: 'span',
                 attrs: [
                     {'name': 'class', 'value': 'controls__item controls__fullscreen'},
-                    {'name': 'data-video', 'value': this.id}
                 ]
             }),
             elements = this.createControl({
