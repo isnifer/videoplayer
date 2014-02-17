@@ -3,11 +3,10 @@
     /*
      * VideoPlayer Constructor
      *
-     * @param {object} video - Contain video element and unique ID
+     * @param {object} video - Video element
      * */
     function Video (video) {
-        this.elem = video.el;
-        this.id = video.id;
+        this.elem = video;
         this.volume = this.elem.volume;
 
         this.init();
@@ -100,7 +99,6 @@
                 tag: 'progress',
                 attrs: [
                     {'name': 'class', 'value': 'controls__progress'},
-                    {'name': 'data-video', 'value': this.id},
                     {'name': 'max', 'value': 100},
                     {'name': 'value', 'value': 0}
                 ]
@@ -259,6 +257,6 @@
         newArr = [];
 
     for (var i = 0; i < videosLen; i+=1) {
-        newArr.push(factory.createVideo({"el": videos[i], "id": i}));
+        newArr.push(factory.createVideo(videos[i]));
     }
 }());
