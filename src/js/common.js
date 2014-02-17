@@ -245,18 +245,11 @@
         }, false);
     };
 
-    var VideoFactory = function () {};
-
-    VideoFactory.prototype.createVideo = function(video) {
-        return new Video(video);
-    };
-
-    var factory = new VideoFactory(),
-        videos = document.querySelectorAll('video'),
+    var videos = document.querySelectorAll('video'),
         videosLen = videos.length,
         newArr = [];
 
     for (var i = 0; i < videosLen; i+=1) {
-        newArr.push(factory.createVideo(videos[i]));
+        newArr.push(new Video(videos[i]));
     }
 }());
