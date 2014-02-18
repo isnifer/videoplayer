@@ -588,15 +588,21 @@ body{
   background-position: -2px -102px;
 }
 /* Controls */
+@import url('http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300');
 .controls-skin_3{
-  position: relative;
+  height: 62px;
+  padding: 0;
 
-  width: 460px;
-  padding: 5px;
+  background: #fff;
 }
 .controls-skin_3 .controls__elements{
-  height: 50px;
-  padding: 8px 0 0;
+  height: 58px;
+  padding: 0;
+
+  background: url('../img/skin_3/controls.png') repeat-x 0 0;
+  background: -moz-linear-gradient(top, #181818 0%, #111 42%, #111 100%);
+  background: -webkit-linear-gradient(top, #181818 0%, #111 42%, #111 100%);
+  background: linear-gradient(to bottom, #181818 0%, #111 42%, #111 100%);
 }
 .controls-skin_3 .controls__item{
   display: inline-block;
@@ -604,29 +610,41 @@ body{
   vertical-align: top;
 }
 .controls-skin_3 .controls__play{
-  width: 40px;
-  height: 40px;
+  position: relative;
+
+  width: 64px;
+  height: 58px;
 
   cursor: pointer;
   text-indent: -9999px;
 
-  border-radius: 2px;
-  background: url('../img/play.png') no-repeat -3px -2px;
+  border-radius: 0;
+  background: url('../img/skin_3/play.png') no-repeat 0 0;
 }
-.controls-skin_3 .controls__play:hover{
-  background-position: -3px -47px;
-}
+.controls-skin_3 .controls__play:hover,
 .controls-skin_3 .controls__play:active{
-  background-position: -3px -93px;
+  background-position: 0 -58px;
 }
 .controls-skin_3 .controls__play_paused{
-  background-position: -53px -2px;
+  background-position: -64px 0;
 }
-.controls-skin_3 .controls__play_paused:hover{
-  background-position: -53px -47px;
-}
+.controls-skin_3 .controls__play_paused:hover,
 .controls-skin_3 .controls__play_paused:active{
-  background-position: -53px -93px;
+  background-position: -64px -58px;
+}
+.controls-skin_3 .controls__play:after{
+  position: absolute;
+  top: 6px;
+  left: 100%;
+
+  display: block;
+
+  width: 1px;
+  height: 46px;
+
+  content: '';
+
+  background: rgba(255,255,255,.1);
 }
 .controls-skin_3 .controls__audio-block{
   width: 156px;
@@ -644,7 +662,7 @@ body{
   vertical-align: top;
   text-indent: -9999px;
 
-  background: url('../img/mute.png') no-repeat 0 0;
+  background: url('../img/skin_3/mute.png') no-repeat 0 0;
 }
 .controls-skin_3 .controls__mute:hover{
   background-position: 0 -40px;
@@ -670,7 +688,7 @@ body{
 
   vertical-align: top;
 
-  background: url('../img/volume-bg.png') no-repeat 0 -2px;
+  background: url('../img/skin_3/volume-bg.png') no-repeat 0 -2px;
 }
 .controls-skin_3 .controls__volume{
   position: relative;
@@ -682,7 +700,7 @@ body{
 
   border-radius: 4px;
   outline: none;
-  background: url('../img/progress.png') repeat-x 0 0;
+  background: url('../img/skin_3/progress.png') repeat-x 0 0;
 
   -webkit-appearance: none;
 }
@@ -692,7 +710,7 @@ body{
 
   border: 1px solid #373737;
   border-radius: 4px;
-  background: url('../img/progress.png') repeat-x 0 0;
+  background: url('../img/skin_3/progress.png') repeat-x 0 0;
 }
 .controls-skin_3 .controls__volume::-webkit-slider-runnable-track{
   width: 50%;
@@ -711,7 +729,7 @@ body{
   height: 18px;
 
   border-radius: 50%;
-  background: url('../img/volume-handler.png') no-repeat -1px 0;
+  background: url('../img/skin_3/volume-handler.png') no-repeat -1px 0;
 
   -webkit-appearance: none;
 }
@@ -719,7 +737,7 @@ body{
   display: block;
 
   width: 100%;
-  height: 5px;
+  height: 4px;
 
   cursor: pointer;
   vertical-align: top;
@@ -727,20 +745,22 @@ body{
   border: 0;
 }
 .controls-skin_3 .controls__progress::-webkit-progress-inner-elemen{
-  background: #252525;
+  background: #dd1e25;
 }
 .controls-skin_3 .controls__progress::-webkit-progress-bar{
-  background: #373737;
+  background: rgba(0,0,0,.5);
 }
 .controls-skin_3 .controls__progress::-webkit-progress-value{
   background: #db5207;
 }
 .controls-skin_3 .controls__time{
-  font-size: 18px;
-  font-weight: bold;
+  font: 300 12px 'Roboto Condensed', sans-serif;
   line-height: 38px;
 
   color: #fff;
+}
+.controls-skin_3 .controls__time-overall{
+  color: #4f4f4f;
 }
 .controls-skin_3 .controls__fullscreen{
   float: right;
@@ -750,7 +770,7 @@ body{
 
   cursor: pointer;
 
-  background: url('../img/fullscreen.png') no-repeat -2px -2px;
+  background: url('../img/skin_3/fullscreen.png') no-repeat -2px -2px;
 }
 .controls-skin_3 .controls__fullscreen:hover{
   background-position: -2px -52px;
