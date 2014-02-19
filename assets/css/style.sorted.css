@@ -257,8 +257,8 @@ body{
   padding: 0;
 }
 .controls-skin_1 .controls__elements{
-  height: 37px;
-  padding: 12px 7px;
+  height: 28px;
+  padding: 7px;
 
   background: -moz-linear-gradient(top, rgba(65,65,65,.91) 0%, rgba(34,34,34,.9) 4%, rgba(31,31,31,.9) 16%, rgba(7,7,7,.89) 72%, rgba(2,2,2,.88) 100%);
   background: -webkit-linear-gradient(top, rgba(65,65,65,.91) 0%, rgba(34,34,34,.9) 4%, rgba(31,31,31,.9) 16%, rgba(7,7,7,.89) 72%, rgba(2,2,2,.88) 100%);
@@ -407,7 +407,7 @@ body{
 .controls-skin_1 .controls__fullscreen{
   position: absolute;
   right: 0;
-  bottom: 4px;
+  bottom: 0;
 
   width: 34px;
   height: 28px;
@@ -1304,7 +1304,7 @@ body{
 /* Controls */
 .controls-skin_7{
   width: 460px;
-  height: 35px;
+  height: 45px;
   padding: 0;
 
   border: 1px solid #f7f7f7;
