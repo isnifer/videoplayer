@@ -198,7 +198,7 @@
         elements.appendChild(allTime);
         elements.appendChild(fullscreen);
 
-        controls.appendChild(progress);
+        // controls.appendChild(progress);
         controls.appendChild(elements);
 
         wrapper.classList.add('video');
