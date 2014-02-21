@@ -1,130 +1,148 @@
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans")
+
 .controls-skin_2
   position relative
-  padding 5px
-  width 460px
+  padding 0
+  width 648px
+  height 40px
+  overflow hidden
+  background #f7f7f7
+  border-bottom-left-radius 5px
+  border-bottom-right-radius 5px
 
   .controls
-
-    &__elements
-      padding 8px 0 0
-      height 50px
 
     &__item
       display inline-block
       vertical-align top
+      margin 0
 
     &__play
-      width 40px
-      height 40px
-      border-radius 2px
+      position relative
+      border-radius 0
       text-indent -9999px
-      background url(../img/default/play.png) no-repeat -3px -2px
+      background url(../img/skin_2/play.png) no-repeat 0 0
+      height 40px
+      width 40px
       cursor pointer
 
-      &:hover
-        background-position -3px -47px
-
-      &:active
-        background-position -3px -93px
+      &:hover, &:active
+        background-position 0 -40px
 
       &_paused
-        background-position -53px -2px
+        background-position -45px 0
 
-        &:hover
-          background-position -53px -47px
+        &:hover, &:active
+          background-position -45px -40px
 
-        &:active
-          background-position -53px -93px
+      &:after
+        background #dcdcdc
+        height 40px
+        width 1px
+        content ""
+        display block
+        position absolute
+        top 0
+        left 100%
 
     &__mute
       display inline-block
       width 40px
       height 40px
-      background url(../img/default/mute.png) no-repeat 0 0
+      background url(../img/skin_2/mute.png) no-repeat 0 0
       vertical-align top
       text-indent -9999px
       cursor pointer
 
-      &:hover
-        background-position 0 -40px
-
-      &:active
-        background-position 0 -80px
+      &:hover, &:active
+        background-position 0 0
 
       &_on
-        background-position -40px 0
+        background-position 0 -40px
 
-        &:hover
-          background-position -40px -40px
-
-        &:hover
-          background-position -40px -80px
+        &:hover, &:active
+          background-position 0 -40px
 
     &__volume
       position relative
-      width 80px
-      height 8px
+      width 55px
+      height 5px
       outline none
-      border-radius 4px
-      background #3498db
+      border-radius 2px
+      background transparent
       cursor pointer
       -webkit-appearance none
+      margin 16px 0 0
 
       &::-webkit-slider-container
         width 80px
-        height 8px
+        height 5px
         border 1px solid #373737
         border-radius 4px
-        background #3498db
+        background #4f4f4f
 
       &::-webkit-slider-runnable-track
         width 50%
-        height 7px
+        height 5px
         border-radius 3px
-        background #3498db
+        background #4f4f4f
         -webkit-user-modify read-write !important
 
       &::-webkit-slider-thumb
         position relative
-        top -5px
-        width 16px
-        height 18px
-        border-radius 50%
-        background url(../img/default/volume-handler.png) no-repeat -1px 0
+        top -3px
+        width 3px
+        height 11px
+        border-radius 0
+        background #333
         -webkit-appearance none
 
     &__progress
-      display block
-      width 100%
+      display inline-block
+      width 280px
       height 5px
       border 0
       vertical-align top
       cursor pointer
+      border-radius 2px
+      margin 16px 15px 0
+      overflow hidden
 
       &::-webkit-progress-inner-element
-        background #252525
+        background #4f4f4f
 
       &::-webkit-progress-bar
-        background #373737
+        background #4f4f4f
 
       &::-webkit-progress-value
-        background #db5207
+        background #898989
 
     &__time
-      color #fff
-      font-weight bold
-      font-size 18px
-      line-height 38px
+      color #333
+      font normal 12px "Droid Sans", sans-serif
+      line-height 40px
+      margin 0 3px 0 15px
+
+    &__time-overall
+      margin 0 15px 0 0
 
     &__fullscreen
       float right
-      width 42px
+      position relative
+      width 40px
       height 40px
-      background url(../img/default/fullscreen.png) no-repeat -2px -2px
+      background url(../img/skin_2/fullscreen.png) no-repeat 0 0
       cursor pointer
 
-      &:hover
-        background-position -2px -52px
+      &:hover, &:active
+        background-position 0 0
 
-      &:active
-        background-position -2px -102px
+      &:before
+        background #dcdcdc
+        height 40px
+        width 1px
+        content ""
+        display block
+        position absolute
+        top 0
+        left 0

@@ -42,7 +42,7 @@ body {
 .video {
   display: inline-block;
   margin: 0 50px 50px 0;
-  width: 460px;
+  min-width: 460px;
   vertical-align: top;
 }
 .video__title {
@@ -55,10 +55,10 @@ body {
   background: #0a0a0a;
 }
 .video video {
-  margin-bottom: -4px;
+  display: block;
   position: relative;
-  width: 460px;
   background: #0a0a0a;
+  width: 100%;
 }
 /* Controls */
 .controls {
@@ -325,134 +325,156 @@ body {
   cursor: pointer;
 }
 /* Controls */
+@import url("http://fonts.googleapis.com/css?family=Droid+Sans");
 .controls-skin_2 {
   position: relative;
-  padding: 5px;
-  width: 460px;
-}
-.controls-skin_2 .controls__elements {
-  padding: 8px 0 0;
-  height: 50px;
+  padding: 0;
+  width: 648px;
+  height: 40px;
+  overflow: hidden;
+  background: #f7f7f7;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 .controls-skin_2 .controls__item {
   display: inline-block;
   vertical-align: top;
+  margin: 0;
 }
 .controls-skin_2 .controls__play {
-  width: 40px;
-  height: 40px;
-  border-radius: 2px;
+  position: relative;
+  border-radius: 0;
   text-indent: -9999px;
-  background: url("../img/default/play.png") no-repeat -3px -2px;
+  background: url("../img/skin_2/play.png") no-repeat 0 0;
+  height: 40px;
+  width: 40px;
   cursor: pointer;
 }
-.controls-skin_2 .controls__play:hover {
-  background-position: -3px -47px;
-}
+.controls-skin_2 .controls__play:hover,
 .controls-skin_2 .controls__play:active {
-  background-position: -3px -93px;
+  background-position: 0 -40px;
 }
 .controls-skin_2 .controls__play_paused {
-  background-position: -53px -2px;
+  background-position: -45px 0;
 }
-.controls-skin_2 .controls__play_paused:hover {
-  background-position: -53px -47px;
-}
+.controls-skin_2 .controls__play_paused:hover,
 .controls-skin_2 .controls__play_paused:active {
-  background-position: -53px -93px;
+  background-position: -45px -40px;
+}
+.controls-skin_2 .controls__play:after {
+  background: #dcdcdc;
+  height: 40px;
+  width: 1px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 100%;
 }
 .controls-skin_2 .controls__mute {
   display: inline-block;
   width: 40px;
   height: 40px;
-  background: url("../img/default/mute.png") no-repeat 0 0;
+  background: url("../img/skin_2/mute.png") no-repeat 0 0;
   vertical-align: top;
   text-indent: -9999px;
   cursor: pointer;
 }
-.controls-skin_2 .controls__mute:hover {
-  background-position: 0 -40px;
-}
+.controls-skin_2 .controls__mute:hover,
 .controls-skin_2 .controls__mute:active {
-  background-position: 0 -80px;
+  background-position: 0 0;
 }
 .controls-skin_2 .controls__mute_on {
-  background-position: -40px 0;
+  background-position: 0 -40px;
 }
-.controls-skin_2 .controls__mute_on:hover {
-  background-position: -40px -40px;
-}
-.controls-skin_2 .controls__mute_on:hover {
-  background-position: -40px -80px;
+.controls-skin_2 .controls__mute_on:hover,
+.controls-skin_2 .controls__mute_on:active {
+  background-position: 0 -40px;
 }
 .controls-skin_2 .controls__volume {
   position: relative;
-  width: 80px;
-  height: 8px;
+  width: 55px;
+  height: 5px;
   outline: none;
-  border-radius: 4px;
-  background: #3498db;
+  border-radius: 2px;
+  background: transparent;
   cursor: pointer;
   -webkit-appearance: none;
+  margin: 16px 0 0;
 }
 .controls-skin_2 .controls__volume::-webkit-slider-container {
   width: 80px;
-  height: 8px;
+  height: 5px;
   border: 1px solid #373737;
   border-radius: 4px;
-  background: #3498db;
+  background: #4f4f4f;
 }
 .controls-skin_2 .controls__volume::-webkit-slider-runnable-track {
   width: 50%;
-  height: 7px;
+  height: 5px;
   border-radius: 3px;
-  background: #3498db;
+  background: #4f4f4f;
   -webkit-user-modify: read-write !important;
 }
 .controls-skin_2 .controls__volume::-webkit-slider-thumb {
   position: relative;
-  top: -5px;
-  width: 16px;
-  height: 18px;
-  border-radius: 50%;
-  background: url("../img/default/volume-handler.png") no-repeat -1px 0;
+  top: -3px;
+  width: 3px;
+  height: 11px;
+  border-radius: 0;
+  background: #333;
   -webkit-appearance: none;
 }
 .controls-skin_2 .controls__progress {
-  display: block;
-  width: 100%;
+  display: inline-block;
+  width: 280px;
   height: 5px;
   border: 0;
   vertical-align: top;
   cursor: pointer;
+  border-radius: 2px;
+  margin: 16px 15px 0;
+  overflow: hidden;
 }
 .controls-skin_2 .controls__progress::-webkit-progress-inner-element {
-  background: #252525;
+  background: #4f4f4f;
 }
 .controls-skin_2 .controls__progress::-webkit-progress-bar {
-  background: #373737;
+  background: #4f4f4f;
 }
 .controls-skin_2 .controls__progress::-webkit-progress-value {
-  background: #db5207;
+  background: #898989;
 }
 .controls-skin_2 .controls__time {
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-  line-height: 38px;
+  color: #333;
+  font: normal 12px "Droid Sans", sans-serif;
+  line-height: 40px;
+  margin: 0 3px 0 15px;
+}
+.controls-skin_2 .controls__time-overall {
+  margin: 0 15px 0 0;
 }
 .controls-skin_2 .controls__fullscreen {
   float: right;
-  width: 42px;
+  position: relative;
+  width: 40px;
   height: 40px;
-  background: url("../img/default/fullscreen.png") no-repeat -2px -2px;
+  background: url("../img/skin_2/fullscreen.png") no-repeat 0 0;
   cursor: pointer;
 }
-.controls-skin_2 .controls__fullscreen:hover {
-  background-position: -2px -52px;
-}
+.controls-skin_2 .controls__fullscreen:hover,
 .controls-skin_2 .controls__fullscreen:active {
-  background-position: -2px -102px;
+  background-position: 0 0;
+}
+.controls-skin_2 .controls__fullscreen:before {
+  background: #dcdcdc;
+  height: 40px;
+  width: 1px;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 /* Controls */
 @import url("http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300");

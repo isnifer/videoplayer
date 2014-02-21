@@ -12,25 +12,25 @@
         this.volume = this.elem.volume;
         this.skin = video.getAttribute('data-skin');
 
-        this.skins = {
-            'skin_1': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
-            'skin_2': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
-            'skin_3': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
-            'skin_4': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
-            'skin_5': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
-            'skin_6': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
-            'skin_7': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
-            'skin_8': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
-            'skin_9': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
-            'default': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen']
-        };
-
         currentSkin = (this.skin && this.skins[this.skin]) ? this.skins[this.skin] : this.skins.default;
 
         this.init(currentSkin);
     }
 
-    var playerControls = {
+    Video.prototype.skins = {
+        'skin_1': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+        'skin_2': ['play', 'time', 'allTime', 'progress', 'mute', 'volume', 'fullscreen'],
+        'skin_3': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+        'skin_4': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+        'skin_5': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+        'skin_6': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+        'skin_7': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+        'skin_8': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+        'skin_9': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+        'default': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen']
+    };
+
+    Video.prototype.playerControls = {
         'progress': {
             'tag': 'progress',
             'attrs': [
@@ -161,14 +161,14 @@
             title = document.createElement('p'),
 
             elements = {
-                progress: this.createControl(playerControls.progress),
-                play: this.createControl(playerControls.play),
-                mute: this.createControl(playerControls.mute),
-                volume: this.createControl(playerControls.volume),
-                time: this.createControl(playerControls.time),
-                allTime: this.createControl(playerControls.allTime),
-                fullscreen: this.createControl(playerControls.fullscreen),
-                elements: this.createControl(playerControls.elements)
+                progress: this.createControl(this.playerControls.progress),
+                play: this.createControl(this.playerControls.play),
+                mute: this.createControl(this.playerControls.mute),
+                volume: this.createControl(this.playerControls.volume),
+                time: this.createControl(this.playerControls.time),
+                allTime: this.createControl(this.playerControls.allTime),
+                fullscreen: this.createControl(this.playerControls.fullscreen),
+                elements: this.createControl(this.playerControls.elements)
             };
 
         title.classList.add('video__title');
@@ -193,6 +193,8 @@
         wrapper.appendChild(this.elem);
         wrapper.appendChild(controls);
 
+        wrapper.style.width = controls.offsetWidth + 'px';
+
         // Handlers
         // Insert time of video
         this.elem.addEventListener('loadedmetadata', function () {
@@ -206,7 +208,7 @@
 
         // Mute video
         elements.mute.addEventListener('click', function () {
-            self.mute(volume);
+            self.mute(elements.volume);
             this.classList.toggle('controls__mute_on');
         }, false);
 
