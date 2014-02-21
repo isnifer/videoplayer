@@ -74,13 +74,14 @@ body {
 .controls__item {
   display: inline-block;
   vertical-align: top;
+  margin-right: 10px;
 }
 .controls__play {
   width: 40px;
   height: 40px;
   border-radius: 2px;
   text-indent: -9999px;
-  background: url("../img/play.png") no-repeat -3px -2px;
+  background: url("../img/default/play.png") no-repeat -3px -2px;
   cursor: pointer;
 }
 .controls__play:hover {
@@ -98,18 +99,13 @@ body {
 .controls__play_paused:active {
   background-position: -53px -93px;
 }
-.controls__audio-block {
-  padding: 0 5px;
-  width: 156px;
-  height: 40px;
-}
 .controls__mute {
   display: inline-block;
-  float: left;
   width: 40px;
   height: 40px;
-  background: url("../img/mute.png") no-repeat 0 0;
+  background: url("../img/default/mute.png") no-repeat 0 0;
   vertical-align: top;
+  border-radius: 2px;
   text-indent: -9999px;
   cursor: pointer;
 }
@@ -120,29 +116,22 @@ body {
   background-position: 0 -80px;
 }
 .controls__mute_on {
-  background-position: -40px 0;
+  background-position: -40px -40px;
 }
 .controls__mute_on:hover {
   background-position: -40px -40px;
 }
-.controls__mute_on:hover {
+.controls__mute_on:active {
   background-position: -40px -80px;
-}
-.controls__range-wrapper {
-  display: inline-block;
-  padding: 8px 7px;
-  width: 106px;
-  height: 40px;
-  background: url("../img/volume-bg.png") no-repeat 0 -2px;
-  vertical-align: top;
 }
 .controls__volume {
   position: relative;
   width: 80px;
   height: 8px;
+  margin-top: 15px;
   outline: none;
   border-radius: 4px;
-  background: url("../img/progress.png") repeat-x 0 0;
+  background: transparent;
   cursor: pointer;
   -webkit-appearance: none;
 }
@@ -151,13 +140,13 @@ body {
   height: 8px;
   border: 1px solid #373737;
   border-radius: 4px;
-  background: url("../img/progress.png") repeat-x 0 0;
+  background: transparent;
 }
 .controls__volume::-webkit-slider-runnable-track {
   width: 50%;
   height: 7px;
   border-radius: 3px;
-  background: url("../img/volume-value.png") repeat-x 0 0;
+  background: url("../img/default/volume-value.png") repeat-x 0 0;
   -webkit-user-modify: read-write !important;
 }
 .controls__volume::-webkit-slider-thumb {
@@ -166,7 +155,7 @@ body {
   width: 16px;
   height: 18px;
   border-radius: 50%;
-  background: url("../img/volume-handler.png") no-repeat -1px 0;
+  background: url("../img/default/volume-handler.png") no-repeat -1px 0;
   -webkit-appearance: none;
 }
 .controls__progress {
@@ -177,7 +166,7 @@ body {
   vertical-align: top;
   cursor: pointer;
 }
-.controls__progress::-webkit-progress-inner-elemen {
+.controls__progress::-webkit-progress-inner-element {
   background: #252525;
 }
 .controls__progress::-webkit-progress-bar {
@@ -191,22 +180,24 @@ body {
   font-weight: bold;
   font-size: 18px;
   line-height: 38px;
-}
-.controls__time-overall {
-  margin-left: 3px;
+  margin-right: 4px;
 }
 .controls__fullscreen {
   float: right;
   width: 42px;
   height: 40px;
-  background: url("../img/fullscreen.png") no-repeat -2px -2px;
+  background: url("../img/default/fullscreen.png") no-repeat -2px -2px;
   cursor: pointer;
+  margin: 0;
 }
 .controls__fullscreen:hover {
   background-position: -2px -52px;
 }
 .controls__fullscreen:active {
   background-position: -2px -102px;
+}
+.controls.controls-skin_default .controls__progress {
+  margin-bottom: 5px;
 }
 /* Controls */
 @import url("http://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,cyrillic");
@@ -244,14 +235,8 @@ body {
 .controls-skin_1 .controls__play_paused:active {
   background-position: 0 -16px;
 }
-.controls-skin_1 .controls__audio-block {
-  padding: 0 5px;
-  width: 120px;
-  height: 15px;
-}
 .controls-skin_1 .controls__mute {
   display: inline-block;
-  float: left;
   width: 22px;
   height: 16px;
   background: url("../img/skin_1/mute.png") no-repeat 0 0;
@@ -261,7 +246,7 @@ body {
 }
 .controls-skin_1 .controls__mute:hover,
 .controls-skin_1 .controls__mute:active {
-  background-position: 1 0;
+  background-position: 1px 0;
 }
 .controls-skin_1 .controls__mute_on {
   background-position: 0 -16px;
@@ -270,18 +255,11 @@ body {
 .controls-skin_1 .controls__mute_on:active {
   background-position: 0 -16px;
 }
-.controls-skin_1 .controls__range-wrapper {
-  display: inline-block;
-  width: 87px;
-  height: 15px;
-  vertical-align: top;
-  background: none;
-  padding: 1px 0 1px 7px;
-}
 .controls-skin_1 .controls__volume {
   position: relative;
   width: 80px;
   height: 14px;
+  margin-top: 3px;
   outline: none;
   border-radius: 3px;
   cursor: pointer;
@@ -317,12 +295,12 @@ body {
   display: block;
   width: 100%;
   height: 8px;
-  margin-bottom: 1px;
+  margin-bottom: 7px;
   border: 0;
   vertical-align: top;
   cursor: pointer;
 }
-.controls-skin_1 .controls__progress::-webkit-progress-inner-elemen {
+.controls-skin_1 .controls__progress::-webkit-progress-inner-element {
   background: #252525;
 }
 .controls-skin_1 .controls__progress::-webkit-progress-bar {
@@ -365,7 +343,7 @@ body {
   height: 40px;
   border-radius: 2px;
   text-indent: -9999px;
-  background: url("../img/play.png") no-repeat -3px -2px;
+  background: url("../img/default/play.png") no-repeat -3px -2px;
   cursor: pointer;
 }
 .controls-skin_2 .controls__play:hover {
@@ -383,17 +361,11 @@ body {
 .controls-skin_2 .controls__play_paused:active {
   background-position: -53px -93px;
 }
-.controls-skin_2 .controls__audio-block {
-  padding: 0 5px;
-  width: 156px;
-  height: 40px;
-}
 .controls-skin_2 .controls__mute {
   display: inline-block;
-  float: left;
   width: 40px;
   height: 40px;
-  background: url("../img/mute.png") no-repeat 0 0;
+  background: url("../img/default/mute.png") no-repeat 0 0;
   vertical-align: top;
   text-indent: -9999px;
   cursor: pointer;
@@ -412,14 +384,6 @@ body {
 }
 .controls-skin_2 .controls__mute_on:hover {
   background-position: -40px -80px;
-}
-.controls-skin_2 .controls__range-wrapper {
-  display: inline-block;
-  padding: 8px 7px;
-  width: 106px;
-  height: 40px;
-  background: url("../img/volume-bg.png") no-repeat 0 -2px;
-  vertical-align: top;
 }
 .controls-skin_2 .controls__volume {
   position: relative;
@@ -451,7 +415,7 @@ body {
   width: 16px;
   height: 18px;
   border-radius: 50%;
-  background: url("../img/volume-handler.png") no-repeat -1px 0;
+  background: url("../img/default/volume-handler.png") no-repeat -1px 0;
   -webkit-appearance: none;
 }
 .controls-skin_2 .controls__progress {
@@ -462,7 +426,7 @@ body {
   vertical-align: top;
   cursor: pointer;
 }
-.controls-skin_2 .controls__progress::-webkit-progress-inner-elemen {
+.controls-skin_2 .controls__progress::-webkit-progress-inner-element {
   background: #252525;
 }
 .controls-skin_2 .controls__progress::-webkit-progress-bar {
@@ -481,7 +445,7 @@ body {
   float: right;
   width: 42px;
   height: 40px;
-  background: url("../img/fullscreen.png") no-repeat -2px -2px;
+  background: url("../img/default/fullscreen.png") no-repeat -2px -2px;
   cursor: pointer;
 }
 .controls-skin_2 .controls__fullscreen:hover {
@@ -494,12 +458,9 @@ body {
 @import url("http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300");
 .controls-skin_3 {
   height: 62px;
-  background: #fff;
   padding: 0;
 }
-.controls-skin_3 .controls__elements {
-  padding: 0;
-  height: 58px;
+.controls-skin_3 .controls {
   background: url("../img/skin_3/controls.png") repeat-x 0 0;
   background: -moz-linear-gradient(top, #181818 0%, #111 42%, #111 100%);
   background: -webkit-linear-gradient(top, #181818 0%, #111 42%, #111 100%);
@@ -539,14 +500,8 @@ body {
   left: 100%;
   top: 6px;
 }
-.controls-skin_3 .controls__audio-block {
-  padding: 0 5px;
-  width: 156px;
-  height: 40px;
-}
 .controls-skin_3 .controls__mute {
   display: inline-block;
-  float: left;
   width: 35px;
   height: 58px;
   background: url("../img/skin_3/mute.png") no-repeat 0 0;
@@ -565,18 +520,11 @@ body {
 .controls-skin_3 .controls__mute_on:active {
   background-position: 0 -58px;
 }
-.controls-skin_3 .controls__range-wrapper {
-  display: inline-block;
-  padding: 15px 7px;
-  width: 106px;
-  height: 58px;
-  background: url("../img/skin_3/volume-bg.png") no-repeat 0 -2px;
-  vertical-align: top;
-}
 .controls-skin_3 .controls__volume {
   position: relative;
   width: 80px;
   height: 4px;
+  margin-top: 27px;
   outline: none;
   border-radius: 4px;
   background: #080808;
@@ -614,8 +562,8 @@ body {
   vertical-align: top;
   cursor: pointer;
 }
-.controls-skin_3 .controls__progress::-webkit-progress-inner-elemen {
-  background: #dd1e25;
+.controls-skin_3 .controls__progress::-webkit-progress-inner-element {
+  background: #fff;
 }
 .controls-skin_3 .controls__progress::-webkit-progress-bar {
   background: rgba(0,0,0,0.5);
@@ -672,7 +620,7 @@ body {
   height: 40px;
   border-radius: 2px;
   text-indent: -9999px;
-  background: url("../img/play.png") no-repeat -3px -2px;
+  background: url("../img/default/play.png") no-repeat -3px -2px;
   cursor: pointer;
 }
 .controls-skin_4 .controls__play:hover {
@@ -690,17 +638,11 @@ body {
 .controls-skin_4 .controls__play_paused:active {
   background-position: -53px -93px;
 }
-.controls-skin_4 .controls__audio-block {
-  padding: 0 5px;
-  width: 156px;
-  height: 40px;
-}
 .controls-skin_4 .controls__mute {
   display: inline-block;
-  float: left;
   width: 40px;
   height: 40px;
-  background: url("../img/mute.png") no-repeat 0 0;
+  background: url("../img/default/mute.png") no-repeat 0 0;
   vertical-align: top;
   text-indent: -9999px;
   cursor: pointer;
@@ -720,21 +662,13 @@ body {
 .controls-skin_4 .controls__mute_on:hover {
   background-position: -40px -80px;
 }
-.controls-skin_4 .controls__range-wrapper {
-  display: inline-block;
-  padding: 8px 7px;
-  width: 106px;
-  height: 40px;
-  background: url("../img/volume-bg.png") no-repeat 0 -2px;
-  vertical-align: top;
-}
 .controls-skin_4 .controls__volume {
   position: relative;
   width: 80px;
   height: 8px;
   outline: none;
   border-radius: 4px;
-  background: url("../img/progress.png") repeat-x 0 0;
+  background: url("../img/default/progress.png") repeat-x 0 0;
   cursor: pointer;
   -webkit-appearance: none;
 }
@@ -743,7 +677,7 @@ body {
   height: 8px;
   border: 1px solid #373737;
   border-radius: 4px;
-  background: url("../img/progress.png") repeat-x 0 0;
+  background: url("../img/default/progress.png") repeat-x 0 0;
 }
 .controls-skin_4 .controls__volume::-webkit-slider-runnable-track {
   width: 50%;
@@ -758,7 +692,7 @@ body {
   width: 16px;
   height: 18px;
   border-radius: 50%;
-  background: url("../img/volume-handler.png") no-repeat -1px 0;
+  background: url("../img/default/volume-handler.png") no-repeat -1px 0;
   -webkit-appearance: none;
 }
 .controls-skin_4 .controls__progress {
@@ -769,7 +703,7 @@ body {
   vertical-align: top;
   cursor: pointer;
 }
-.controls-skin_4 .controls__progress::-webkit-progress-inner-elemen {
+.controls-skin_4 .controls__progress::-webkit-progress-inner-element {
   background: #252525;
 }
 .controls-skin_4 .controls__progress::-webkit-progress-bar {
@@ -788,7 +722,7 @@ body {
   float: right;
   width: 42px;
   height: 40px;
-  background: url("../img/fullscreen.png") no-repeat -2px -2px;
+  background: url("../img/default/fullscreen.png") no-repeat -2px -2px;
   cursor: pointer;
 }
 .controls-skin_4 .controls__fullscreen:hover {
@@ -816,7 +750,7 @@ body {
   height: 40px;
   border-radius: 2px;
   text-indent: -9999px;
-  background: url("../img/play.png") no-repeat -3px -2px;
+  background: url("../img/default/play.png") no-repeat -3px -2px;
   cursor: pointer;
 }
 .controls-skin_5 .controls__play:hover {
@@ -834,17 +768,11 @@ body {
 .controls-skin_5 .controls__play_paused:active {
   background-position: -53px -93px;
 }
-.controls-skin_5 .controls__audio-block {
-  padding: 0 5px;
-  width: 156px;
-  height: 40px;
-}
 .controls-skin_5 .controls__mute {
   display: inline-block;
-  float: left;
   width: 40px;
   height: 40px;
-  background: url("../img/mute.png") no-repeat 0 0;
+  background: url("../img/default/mute.png") no-repeat 0 0;
   vertical-align: top;
   text-indent: -9999px;
   cursor: pointer;
@@ -864,21 +792,13 @@ body {
 .controls-skin_5 .controls__mute_on:hover {
   background-position: -40px -80px;
 }
-.controls-skin_5 .controls__range-wrapper {
-  display: inline-block;
-  padding: 8px 7px;
-  width: 106px;
-  height: 40px;
-  background: url("../img/volume-bg.png") no-repeat 0 -2px;
-  vertical-align: top;
-}
 .controls-skin_5 .controls__volume {
   position: relative;
   width: 80px;
   height: 8px;
   outline: none;
   border-radius: 4px;
-  background: url("../img/progress.png") repeat-x 0 0;
+  background: url("../img/default/progress.png") repeat-x 0 0;
   cursor: pointer;
   -webkit-appearance: none;
 }
@@ -887,7 +807,7 @@ body {
   height: 8px;
   border: 1px solid #373737;
   border-radius: 4px;
-  background: url("../img/progress.png") repeat-x 0 0;
+  background: url("../img/default/progress.png") repeat-x 0 0;
 }
 .controls-skin_5 .controls__volume::-webkit-slider-runnable-track {
   width: 50%;
@@ -902,7 +822,7 @@ body {
   width: 16px;
   height: 18px;
   border-radius: 50%;
-  background: url("../img/volume-handler.png") no-repeat -1px 0;
+  background: url("../img/default/volume-handler.png") no-repeat -1px 0;
   -webkit-appearance: none;
 }
 .controls-skin_5 .controls__progress {
@@ -913,7 +833,7 @@ body {
   vertical-align: top;
   cursor: pointer;
 }
-.controls-skin_5 .controls__progress::-webkit-progress-inner-elemen {
+.controls-skin_5 .controls__progress::-webkit-progress-inner-element {
   background: #252525;
 }
 .controls-skin_5 .controls__progress::-webkit-progress-bar {
@@ -932,7 +852,7 @@ body {
   float: right;
   width: 42px;
   height: 40px;
-  background: url("../img/fullscreen.png") no-repeat -2px -2px;
+  background: url("../img/default/fullscreen.png") no-repeat -2px -2px;
   cursor: pointer;
 }
 .controls-skin_5 .controls__fullscreen:hover {
@@ -960,7 +880,7 @@ body {
   height: 40px;
   border-radius: 2px;
   text-indent: -9999px;
-  background: url("../img/play.png") no-repeat -3px -2px;
+  background: url("../img/default/play.png") no-repeat -3px -2px;
   cursor: pointer;
 }
 .controls-skin_6 .controls__play:hover {
@@ -978,17 +898,11 @@ body {
 .controls-skin_6 .controls__play_paused:active {
   background-position: -53px -93px;
 }
-.controls-skin_6 .controls__audio-block {
-  padding: 0 5px;
-  width: 156px;
-  height: 40px;
-}
 .controls-skin_6 .controls__mute {
   display: inline-block;
-  float: left;
   width: 40px;
   height: 40px;
-  background: url("../img/mute.png") no-repeat 0 0;
+  background: url("../img/default/mute.png") no-repeat 0 0;
   vertical-align: top;
   text-indent: -9999px;
   cursor: pointer;
@@ -1008,21 +922,13 @@ body {
 .controls-skin_6 .controls__mute_on:hover {
   background-position: -40px -80px;
 }
-.controls-skin_6 .controls__range-wrapper {
-  display: inline-block;
-  padding: 8px 7px;
-  width: 106px;
-  height: 40px;
-  background: url("../img/volume-bg.png") no-repeat 0 -2px;
-  vertical-align: top;
-}
 .controls-skin_6 .controls__volume {
   position: relative;
   width: 80px;
   height: 8px;
   outline: none;
   border-radius: 4px;
-  background: url("../img/progress.png") repeat-x 0 0;
+  background: url("../img/default/progress.png") repeat-x 0 0;
   cursor: pointer;
   -webkit-appearance: none;
 }
@@ -1031,7 +937,7 @@ body {
   height: 8px;
   border: 1px solid #373737;
   border-radius: 4px;
-  background: url("../img/progress.png") repeat-x 0 0;
+  background: url("../img/default/progress.png") repeat-x 0 0;
 }
 .controls-skin_6 .controls__volume::-webkit-slider-runnable-track {
   width: 50%;
@@ -1046,7 +952,7 @@ body {
   width: 16px;
   height: 18px;
   border-radius: 50%;
-  background: url("../img/volume-handler.png") no-repeat -1px 0;
+  background: url("../img/default/volume-handler.png") no-repeat -1px 0;
   -webkit-appearance: none;
 }
 .controls-skin_6 .controls__progress {
@@ -1057,7 +963,7 @@ body {
   vertical-align: top;
   cursor: pointer;
 }
-.controls-skin_6 .controls__progress::-webkit-progress-inner-elemen {
+.controls-skin_6 .controls__progress::-webkit-progress-inner-element {
   background: #252525;
 }
 .controls-skin_6 .controls__progress::-webkit-progress-bar {
@@ -1076,7 +982,7 @@ body {
   float: right;
   width: 42px;
   height: 40px;
-  background: url("../img/fullscreen.png") no-repeat -2px -2px;
+  background: url("../img/default/fullscreen.png") no-repeat -2px -2px;
   cursor: pointer;
 }
 .controls-skin_6 .controls__fullscreen:hover {
@@ -1134,14 +1040,8 @@ body {
 .controls-skin_7 .controls__play_paused:active {
   background-position: 0 -33px;
 }
-.controls-skin_7 .controls__audio-block {
-  padding: 0 5px;
-  width: 156px;
-  height: 35px;
-}
 .controls-skin_7 .controls__mute {
   display: inline-block;
-  float: left;
   width: 35px;
   height: 33px;
   background: url("../img/skin_7/mute.png") no-repeat 0 0;
@@ -1160,18 +1060,11 @@ body {
 .controls-skin_7 .controls__mute_on:active {
   background-position: 0 -33px;
 }
-.controls-skin_7 .controls__range-wrapper {
-  display: inline-block;
-  padding: 6px 7px;
-  width: 106px;
-  height: 33px;
-  background: none;
-  vertical-align: top;
-}
 .controls-skin_7 .controls__volume {
   position: relative;
   width: 80px;
   height: 10px;
+  margin-top: 12px;
   outline: none;
   border-radius: 3px;
   background: url("../img/skin_7/volume.png") repeat-x 0 0;
@@ -1210,7 +1103,7 @@ body {
   vertical-align: top;
   cursor: pointer;
 }
-.controls-skin_7 .controls__progress::-webkit-progress-inner-elemen {
+.controls-skin_7 .controls__progress::-webkit-progress-inner-element {
   background: #252525;
 }
 .controls-skin_7 .controls__progress::-webkit-progress-bar {
@@ -1279,14 +1172,8 @@ body {
 .controls-skin_8 .controls__play_paused:active {
   background-position: 0 -27px;
 }
-.controls-skin_8 .controls__audio-block {
-  padding: 0 5px;
-  width: 156px;
-  height: 28px;
-}
 .controls-skin_8 .controls__mute {
   display: inline-block;
-  float: left;
   width: 27px;
   height: 27px;
   background: url("../img/skin_8/mute.png") no-repeat 0 0;
@@ -1305,18 +1192,11 @@ body {
 .controls-skin_8 .controls__mute_on:active {
   background-position: 0 -27px;
 }
-.controls-skin_8 .controls__range-wrapper {
-  display: inline-block;
-  padding: 0 7px;
-  width: 106px;
-  height: 27px;
-  background: none;
-  vertical-align: top;
-}
 .controls-skin_8 .controls__volume {
   position: relative;
   width: 80px;
   height: 4px;
+  margin-top: 11px;
   outline: none;
   border-radius: 0;
   background: #444;
@@ -1354,7 +1234,7 @@ body {
   vertical-align: top;
   cursor: pointer;
 }
-.controls-skin_8 .controls__progress::-webkit-progress-inner-elemen {
+.controls-skin_8 .controls__progress::-webkit-progress-inner-element {
   background: #444;
 }
 .controls-skin_8 .controls__progress::-webkit-progress-bar {
@@ -1402,7 +1282,7 @@ body {
   height: 40px;
   border-radius: 2px;
   text-indent: -9999px;
-  background: url("../img/play.png") no-repeat -3px -2px;
+  background: url("../img/default/play.png") no-repeat -3px -2px;
   cursor: pointer;
 }
 .controls-skin_9 .controls__play:hover {
@@ -1420,17 +1300,11 @@ body {
 .controls-skin_9 .controls__play_paused:active {
   background-position: -53px -93px;
 }
-.controls-skin_9 .controls__audio-block {
-  padding: 0 5px;
-  width: 156px;
-  height: 40px;
-}
 .controls-skin_9 .controls__mute {
   display: inline-block;
-  float: left;
   width: 40px;
   height: 40px;
-  background: url("../img/mute.png") no-repeat 0 0;
+  background: url("../img/default/mute.png") no-repeat 0 0;
   vertical-align: top;
   text-indent: -9999px;
   cursor: pointer;
@@ -1450,21 +1324,13 @@ body {
 .controls-skin_9 .controls__mute_on:hover {
   background-position: -40px -80px;
 }
-.controls-skin_9 .controls__range-wrapper {
-  display: inline-block;
-  padding: 8px 7px;
-  width: 106px;
-  height: 40px;
-  background: url("../img/volume-bg.png") no-repeat 0 -2px;
-  vertical-align: top;
-}
 .controls-skin_9 .controls__volume {
   position: relative;
   width: 80px;
   height: 8px;
   outline: none;
   border-radius: 4px;
-  background: url("../img/progress.png") repeat-x 0 0;
+  background: url("../img/default/progress.png") repeat-x 0 0;
   cursor: pointer;
   -webkit-appearance: none;
 }
@@ -1473,7 +1339,7 @@ body {
   height: 8px;
   border: 1px solid #373737;
   border-radius: 4px;
-  background: url("../img/progress.png") repeat-x 0 0;
+  background: url("../img/default/progress.png") repeat-x 0 0;
 }
 .controls-skin_9 .controls__volume::-webkit-slider-runnable-track {
   width: 50%;
@@ -1488,7 +1354,7 @@ body {
   width: 16px;
   height: 18px;
   border-radius: 50%;
-  background: url("../img/volume-handler.png") no-repeat -1px 0;
+  background: url("../img/default/volume-handler.png") no-repeat -1px 0;
   -webkit-appearance: none;
 }
 .controls-skin_9 .controls__progress {
@@ -1499,7 +1365,7 @@ body {
   vertical-align: top;
   cursor: pointer;
 }
-.controls-skin_9 .controls__progress::-webkit-progress-inner-elemen {
+.controls-skin_9 .controls__progress::-webkit-progress-inner-element {
   background: #252525;
 }
 .controls-skin_9 .controls__progress::-webkit-progress-bar {
@@ -1518,7 +1384,7 @@ body {
   float: right;
   width: 42px;
   height: 40px;
-  background: url("../img/fullscreen.png") no-repeat -2px -2px;
+  background: url("../img/default/fullscreen.png") no-repeat -2px -2px;
   cursor: pointer;
 }
 .controls-skin_9 .controls__fullscreen:hover {

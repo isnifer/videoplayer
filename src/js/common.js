@@ -6,12 +6,75 @@
      * @param {object} video - Video element
      * */
     function Video (video) {
+        var currentSkin;
+        
         this.elem = video;
         this.volume = this.elem.volume;
         this.skin = video.getAttribute('data-skin');
 
-        this.init();
+        this.skins = {
+            'skin_1': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+            'skin_2': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+            'skin_3': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+            'skin_4': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+            'skin_5': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+            'skin_6': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+            'skin_7': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+            'skin_8': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+            'skin_9': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+            'default': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen']
+        };
+
+        currentSkin = (this.skin && this.skins[this.skin]) ? this.skins[this.skin] : this.skins.default;
+
+        this.init(currentSkin);
     }
+
+    var playerControls = {
+        'progress': {
+            'tag': 'progress',
+            'attrs': [
+                {'name': 'class', 'value': 'controls__progress'},
+                {'name': 'max', 'value': 100},
+                {'name': 'value', 'value': 0}
+            ]
+        },
+        'play': {
+            'tag': 'span',
+            'attrs': [{'name': 'class', 'value': 'controls__item controls__play'}]
+        },
+        'mute': {
+            'tag': 'span',
+            'attrs': [{'name': 'class', 'value': 'controls__item controls__mute'}]
+        },
+        'volume': {
+            'tag': 'input',
+            'attrs': [
+                {'name': 'class', 'value': 'controls__item controls__volume'},
+                {'name': 'type', 'value': 'range'},
+                {'name': 'min', 'value': 0},
+                {'name': 'max', 'value': 1},
+                {'name': 'step', 'value': 0.01},
+                {'name': 'value', 'value': 1}
+            ]
+        },
+        'time': {
+            'tag': 'span',
+            'attrs': [{'name': 'class', 'value': 'controls__item controls__time'}]
+        },
+        'allTime': {
+            'tag': 'span',
+            'attrs': [{'name': 'class', 'value': 'controls__item controls__time controls__time-overall'}]
+        },
+        'fullscreen': {
+            'tag': 'span',
+            'attrs': [{'name': 'class', 'value': 'controls__item controls__fullscreen'}]
+        },
+        'elements': {
+            'tag': 'div',
+            'attrs': [{'name': 'class', 'value': 'controls__elements'}]
+        }
+    };
 
     Video.prototype.createControl = function (options) {
         var el = document.createElement(options.tag);
@@ -90,93 +153,23 @@
         }
     };
 
-    Video.prototype.init = function () {
+    Video.prototype.init = function (currentSkin) {
         var self = this,
             videoParent = self.elem.parentNode,
             wrapper = document.createElement('div'),
             controls = document.createElement('div'),
             title = document.createElement('p'),
 
-            // Video Progress element
-            progress = this.createControl({
-                tag: 'progress',
-                attrs: [
-                    {'name': 'class', 'value': 'controls__progress'},
-                    {'name': 'max', 'value': 100},
-                    {'name': 'value', 'value': 0}
-                ]
-            }),
-
-            // Play-Pause Button
-            play = this.createControl({
-                tag: 'span',
-                attrs: [
-                    {'name': 'class', 'value': 'controls__item controls__play'},
-                ]
-            }),
-            audio = this.createControl({
-                tag: 'div',
-                attrs: [
-                    {'name': 'class', 'value': 'controls__item controls__audio-block'}
-                ]
-            }),
-
-            // Mute Button
-            mute = this.createControl({
-                tag: 'span',
-                attrs: [
-                    {'name': 'class', 'value': 'controls__mute'},
-                ]
-            }),
-            rangeWrapper = this.createControl({
-                tag: 'label',
-                attrs: [
-                    {'name': 'class', 'value': 'controls__range-wrapper'}
-                ]
-            }),
-
-            // Volume control
-            volume = this.createControl({
-                tag: 'input',
-                attrs: [
-                    {'name': 'class', 'value': 'controls__volume'},
-                    {'name': 'type', 'value': 'range'},
-                    {'name': 'min', 'value': 0},
-                    {'name': 'max', 'value': 1},
-                    {'name': 'step', 'value': 0.01},
-                    {'name': 'value', 'value': 1}
-                ]
-            }),
-
-            // Time indicator
-            time = this.createControl({
-                tag: 'span',
-                attrs: [
-                    {'name': 'class', 'value': 'controls__item controls__time'},
-                ]
-            }),
-
-            // Time indicator
-            allTime = this.createControl({
-                tag: 'span',
-                attrs: [
-                    {'name': 'class', 'value': 'controls__item controls__time controls__time-overall'},
-                ]
-            }),
-
-            // Fullscreen Button
-            fullscreen = this.createControl({
-                tag: 'span',
-                attrs: [
-                    {'name': 'class', 'value': 'controls__item controls__fullscreen'},
-                ]
-            }),
-            elements = this.createControl({
-                tag: 'div',
-                attrs: [
-                    {'name': 'class', 'value': 'controls__elements'}
-                ]
-            });
+            elements = {
+                progress: this.createControl(playerControls.progress),
+                play: this.createControl(playerControls.play),
+                mute: this.createControl(playerControls.mute),
+                volume: this.createControl(playerControls.volume),
+                time: this.createControl(playerControls.time),
+                allTime: this.createControl(playerControls.allTime),
+                fullscreen: this.createControl(playerControls.fullscreen),
+                elements: this.createControl(playerControls.elements)
+            };
 
         title.classList.add('video__title');
         title.textContent = this.elem.title;
@@ -184,22 +177,14 @@
         controls.classList.add('controls');
 
         if (this.skin) {
-            controls.classList.add('controls-skin_' + this.skin);
+            controls.classList.add('controls-' + this.skin); 
+        } else {
+            controls.classList.add('controls-skin_default');
         }
 
-        rangeWrapper.appendChild(volume);
-
-        audio.appendChild(mute);
-        audio.appendChild(rangeWrapper);
-
-        elements.appendChild(play);
-        elements.appendChild(audio);
-        elements.appendChild(time);
-        elements.appendChild(allTime);
-        elements.appendChild(fullscreen);
-
-        controls.appendChild(progress);
-        controls.appendChild(elements);
+        for (var i = 0; i < currentSkin.length; i++) {
+            controls.appendChild(elements[currentSkin[i]]);
+        }
 
         wrapper.classList.add('video');
 
@@ -211,39 +196,39 @@
         // Handlers
         // Insert time of video
         this.elem.addEventListener('loadedmetadata', function () {
-            allTime.textContent = ' / ' + self.getHumanReadableTime();
+            elements.allTime.textContent = ' / ' + self.getHumanReadableTime();
         }, false);
 
         // Change volume
-        volume.addEventListener('change', function () {
+        elements.volume.addEventListener('change', function () {
             self.changeVolume(this.value);
         }, false);
 
         // Mute video
-        mute.addEventListener('click', function () {
+        elements.mute.addEventListener('click', function () {
             self.mute(volume);
             this.classList.toggle('controls__mute_on');
         }, false);
 
         // Play - Pause
-        play.addEventListener('click', function () {
+        elements.play.addEventListener('click', function () {
             self.playPause();
             this.classList.toggle('controls__play_paused');
         }, false);
 
         // Toggle class of Play button
         this.elem.addEventListener('ended', function () {
-            play.classList.toggle('controls__play_paused');
+            elements.play.classList.toggle('controls__play_paused');
         });
 
         // Update progress bar
         this.elem.addEventListener('timeupdate', function () {
-            time.textContent = self.getHumanReadableTime(this.currentTime);
-            self.updateProgressbar(progress);
+            elements.time.textContent = self.getHumanReadableTime(this.currentTime);
+            self.updateProgressbar(elements.progress);
         }, false);
 
         // Change video position by click on progress bar
-        progress.addEventListener('click', function (e) {
+        elements.progress.addEventListener('click', function (e) {
             var coords = Math.floor((100 / this.offsetWidth) * e.offsetX);
 
             self.goToPosition(coords);
@@ -251,14 +236,14 @@
 
             if (self.elem.paused) {
                 self.elem.play();
-                play.classList.remove('controls__play_paused');
+                elements.play.classList.remove('controls__play_paused');
             } else {
-                play.classList.add('controls__play_paused');
+                elements.play.classList.add('controls__play_paused');
             }
         }, false);
 
         // Go to Fullscreen view
-        fullscreen.addEventListener('click', function () {
+        elements.fullscreen.addEventListener('click', function () {
             self.fullScreen();
         }, false);
     };

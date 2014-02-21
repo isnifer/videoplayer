@@ -10,7 +10,7 @@ module.exports = function (grunt) {
                     livereload: true,
                     tasks: ['stylus:compile', 'uglify', 'csscomb:foo', 'cssmin:minify']
                 },
-                files: ['*.html', 'assets/css/style.css', 'js/*.js']
+                files: ['*.html', 'assets/css/style.css', 'assets/js/*.js']
             },
 
             css: {
