@@ -1,4 +1,4 @@
-(function () {
+(function (doc) {
 
     /*
      * VideoPlayer Constructor
@@ -77,7 +77,7 @@
     };
 
     Video.prototype.createControl = function (options) {
-        var el = document.createElement(options.tag);
+        var el = doc.createElement(options.tag);
 
         for (var i = 0; i < options.attrs.length; i++) {
             el.setAttribute(options.attrs[i].name, options.attrs[i].value);
@@ -156,9 +156,9 @@
     Video.prototype.init = function (currentSkin) {
         var self = this,
             videoParent = self.elem.parentNode,
-            wrapper = document.createElement('div'),
-            controls = document.createElement('div'),
-            title = document.createElement('p'),
+            wrapper = doc.createElement('div'),
+            controls = doc.createElement('div'),
+            title = doc.createElement('p'),
 
             elements = {
                 progress: this.createControl(this.playerControls.progress),
@@ -250,11 +250,11 @@
         }, false);
     };
 
-    var videos = document.querySelectorAll('video'),
+    var videos = doc.querySelectorAll('video'),
         videosLen = videos.length,
         newArr = [];
 
     for (var i = 0; i < videosLen; i+=1) {
         newArr.push(new Video(videos[i]));
     }
-}());
+}(document));
