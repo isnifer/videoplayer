@@ -12,7 +12,7 @@
         this.volume = this.elem.volume;
         this.skin = video.getAttribute('data-skin');
 
-        currentSkin = (this.skin && this.skins[this.skin]) ? this.skins[this.skin] : this.skins.default;
+        currentSkin = (this.skin && this.skins[this.skin]) ? {order: this.skins[this.skin], name: this.skin} : {order: this.skins.default, name: 'default'};
 
         this.init(currentSkin);
     }
@@ -173,16 +173,10 @@
         title.classList.add('video__title');
         title.textContent = this.elem.title;
 
-        controls.classList.add('controls');
+        controls.classList.add('controls', 'controls-' + currentSkin.name);
 
-        if (this.skin) {
-            controls.classList.add('controls-' + this.skin); 
-        } else {
-            controls.classList.add('controls-skin_default');
-        }
-
-        for (var i = 0; i < currentSkin.length; i++) {
-            controls.appendChild(elements[currentSkin[i]]);
+        for (var i = 0; i < currentSkin.order.length; i++) {
+            controls.appendChild(elements[currentSkin.order[i]]);
         }
 
         wrapper.classList.add('video');

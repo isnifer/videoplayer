@@ -192,7 +192,7 @@ body {
 .controls__fullscreen:active {
   background-position: -2px -102px;
 }
-.controls.controls-skin_default .controls__progress {
+.controls.controls-default .controls__progress {
   margin-bottom: 5px;
 }
 /* Controls Skin 1 */
