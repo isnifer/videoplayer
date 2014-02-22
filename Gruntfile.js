@@ -19,7 +19,7 @@ module.exports = function (grunt) {
             },
 
             js: {
-                files: ['src/js/common.js'],
+                files: ['src/js/videoplayer.js'],
                 tasks: ['uglify']
             }
         },
@@ -44,7 +44,7 @@ module.exports = function (grunt) {
             },
             target: {
                 files: {
-                    'assets/js/common.min.js': 'src/js/common.js'
+                    'assets/js/videoplayer.min.js': 'src/js/videoplayer.js'
                 }
             }
         },
