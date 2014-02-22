@@ -26,7 +26,6 @@
         'skin_6': ['play', 'mute', 'progress', 'time', 'fullscreen'],
         'skin_7': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
         'skin_8': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
-        'skin_9': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
         'default': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen']
     };
 
