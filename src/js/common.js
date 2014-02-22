@@ -23,7 +23,7 @@
         'skin_3': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
         'skin_4': ['play', 'progress', 'time', 'mute'],
         'skin_5': ['play', 'progress',  'volume', 'mute'],
-        'skin_6': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
+        'skin_6': ['play', 'mute', 'progress', 'time', 'fullscreen'],
         'skin_7': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
         'skin_8': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
         'skin_9': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen'],
