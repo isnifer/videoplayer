@@ -1,130 +1,116 @@
 .controls-skin_5
-  position relative
-  padding 5px
+  padding 0
   width 460px
+  height 35px
+  background -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(250,250,251,1) 12%, rgba(236,238,240,1) 32%, rgba(206,210,214,1) 68%, rgba(186,191,198,1) 100%)
+  background -webkit-linear-gradient(top, rgba(255,255,255,1) 0%,rgba(250,250,251,1) 12%,rgba(236,238,240,1) 32%,rgba(206,210,214,1) 68%,rgba(186,191,198,1) 100%)
+  background linear-gradient(to bottom, rgba(255,255,255,1) 0%,rgba(250,250,251,1) 12%,rgba(236,238,240,1) 32%,rgba(206,210,214,1) 68%,rgba(186,191,198,1) 100%)
 
   .controls
-
-    &__elements
-      padding 8px 0 0
-      height 50px
 
     &__item
       display inline-block
       vertical-align top
 
     &__play
-      width 40px
-      height 40px
+      width 45px
+      height 26px
+      margin 5px 10px 0 5px
       border-radius 2px
       text-indent -9999px
-      background url(../img/default/play.png) no-repeat -3px -2px
+      background url(../img/skin_5/play.png) no-repeat 0 0
       cursor pointer
 
       &:hover
-        background-position -3px -47px
+        background-position 0 -26px
 
       &:active
-        background-position -3px -93px
+        background-position 0 -52px
 
       &_paused
-        background-position -53px -2px
+        background-position -45px 0
 
         &:hover
-          background-position -53px -47px
+          background-position -45px -26px
 
         &:active
-          background-position -53px -93px
+          background-position -45px -52px
 
     &__mute
       display inline-block
-      width 40px
-      height 40px
-      background url(../img/default/mute.png) no-repeat 0 0
+      width 26px
+      height 26px
+      background url(../img/skin_5/mute.png) no-repeat 0 0
       vertical-align top
       text-indent -9999px
       cursor pointer
+      margin 3px 7px 0 0
+      float right
 
-      &:hover
-        background-position 0 -40px
-
-      &:active
-        background-position 0 -80px
+      &:hover, &:active
+        background-position 0 -26px
 
       &_on
-        background-position -40px 0
+        background-position -26px 0 
 
-        &:hover
-          background-position -40px -40px
-
-        &:hover
-          background-position -40px -80px
+        &:hover, &:active
+          background-position -26px -26px
 
     &__volume
       position relative
       width 80px
-      height 8px
+      height 5px
       outline none
-      border-radius 4px
-      background url(../img/default/progress.png) repeat-x 0 0
+      border-radius 0
+      background transparent
       cursor pointer
       -webkit-appearance none
+      float right
+      margin 14px 7px 0 0
 
       &::-webkit-slider-container
         width 80px
-        height 8px
-        border 1px solid #373737
-        border-radius 4px
-        background url(../img/default/progress.png) repeat-x 0 0
+        height 5px
+        border 0
+        border-radius 0
+        background transparent
 
       &::-webkit-slider-runnable-track
         width 50%
-        height 7px
-        border-radius 3px
-        background #d35400
+        height 5px
+        border-radius 0
+        background url(../img/skin_5/progress.png) repeat-x 0 0
         -webkit-user-modify read-write !important
 
       &::-webkit-slider-thumb
         position relative
-        top -5px
-        width 16px
-        height 18px
+        top -3px
+        width 13px
+        height 13px
         border-radius 50%
-        background url(../img/default/volume-handler.png) no-repeat -1px 0
+        background url(../img/skin_5/volume-handler.png) no-repeat -1px 0
         -webkit-appearance none
 
     &__progress
-      display block
-      width 100%
+      display inline-block
+      width 138px
       height 5px
+      margin 14px 10px 0 0
       border 0
       vertical-align top
       cursor pointer
 
       &::-webkit-progress-inner-element
-        background #252525
+        background transparent
 
       &::-webkit-progress-bar
-        background #373737
+        background url(../img/skin_5/progress-bg.png) repeat-x 0 0
 
       &::-webkit-progress-value
-        background #db5207
+        background url(../img/skin_5/progress.png) repeat-x 0 0
 
     &__time
       color #fff
       font-weight bold
       font-size 18px
       line-height 38px
-
-    &__fullscreen
-      float right
-      width 42px
-      height 40px
-      background url(../img/default/fullscreen.png) no-repeat -2px -2px
-      cursor pointer
-
-      &:hover
-        background-position -2px -52px
-
-      &:active
-        background-position -2px -102px
