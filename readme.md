@@ -1,3 +1,3 @@
 ## HTML5 Video Player ##
 
-###[Demo](http://kuznetsovanton.ru/games/videoapi/) (21.02.2014 19:56:34)###
+###[Demo](http://kuznetsovanton.ru/games/videoapi/demo.html) (23.02.2014 04:33:34)###

@@ -32,7 +32,8 @@ module.exports = function (grunt) {
                     paths: ['stylus']
                 },
                 files: {
-                    'assets/css/style.css': 'src/stylus/style.styl'
+                    'assets/css/style.css': 'src/stylus/style.styl',
+                    'assets/css/fonts.css': 'src/stylus/fonts.styl'
                 }
             }
 
@@ -62,11 +63,12 @@ module.exports = function (grunt) {
 
         cssmin: {
             options: {
-                keepSpecialComments: 0
+                keepSpecialComments: 0,
+                report: 'min'
             },
             minify: {
                 files: {
-                    'assets/css/style.min.css': ['assets/css/normalize.css', 'assets/css/style.sorted.css']
+                    'assets/css/style.min.css': ['assets/css/fonts.css', 'assets/css/normalize.css', 'assets/css/style.sorted.css']
                 }
             }
         }

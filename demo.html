@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>HTML5 Video Player</title>
-    <link rel="stylesheet" href="assets/css/fonts.css">
-    <link rel="stylesheet" href="assets/css/normalize.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
 </head>
 <body>
 
@@ -22,10 +20,10 @@
             <source src="video/ogv/video_5.ogv" type="video/ogg">
             <p>Your browser doesn't allow html5 video</p>
         </video>
-        <!-- <video preload="auto" title="Douglas Crockford: The JavaScript Programming Language" data-skin="skin_1">
+        <video preload="auto" title="Douglas Crockford: The JavaScript Programming Language" data-skin="skin_1">
             <source src="video/mp4/crockford.mp4" type="video/mp4">
             <p>Your browser doesn't allow html5 video</p>
-        </video> -->
+        </video>
         <video preload="auto" title="AC/DC - Thunderstruck" data-skin="skin_2">
             <source src="video/mp4/video.mp4" type="video/mp4">
             <source src="video/webm/video.webm" type="video/webm">
@@ -74,11 +72,10 @@
         </video>
     </div>
 
-    <script src="src/js/videoplayer.js"></script>
+    <script src="assets/js/videoplayer.min.js"></script>
     <script>
         var videos = new Player('video');
     </script>
-    <!-- <script src="http://localhost:35729/livereload.js"></script> -->
 
 </body>
 </html>

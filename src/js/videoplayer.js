@@ -225,13 +225,6 @@ Video.prototype.init = function (currentSkin) {
 
         self.goToPosition(coords);
         this.value = coords;
-
-        if (self.elem.paused) {
-            self.elem.play();
-            elements.play.classList.remove('controls__play_paused');
-        } else {
-            elements.play.classList.add('controls__play_paused');
-        }
     }, false);
 
     // Go to Fullscreen view

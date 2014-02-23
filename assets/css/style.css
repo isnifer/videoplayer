@@ -1,5 +1,3 @@
-/* Fonts */
-@import url("http://fonts.googleapis.com/css?family=PT+Sans:400,700");
 /* Globals */
 * {
   -webkit-box-sizing: border-box;
@@ -196,7 +194,6 @@ body {
   margin-bottom: 5px;
 }
 /* Controls Skin 1 */
-@import url("http://fonts.googleapis.com/css?family=Ubuntu:300&subset=latin,cyrillic");
 .controls-skin_1 {
   height: 37px;
   padding: 0;
@@ -321,7 +318,6 @@ body {
   cursor: pointer;
 }
 /* Controls Skin 2 */
-@import url("http://fonts.googleapis.com/css?family=Droid+Sans");
 .controls-skin_2 {
   position: relative;
   padding: 0;
