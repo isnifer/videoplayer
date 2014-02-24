@@ -8,20 +8,16 @@ module.exports = function (grunt) {
             livereload: {
                 options: {
                     livereload: true,
-                    tasks: ['stylus:compile', 'uglify', 'csscomb:foo', 'cssmin:minify']
+                    tasks: ['stylus:compile']
                 },
-                files: ['*.html', 'assets/css/style.css', 'assets/js/*.js']
+                files: ['*.html', 'assets/css/style.css', 'src/js/*.js']
             },
 
             css: {
                 files: ['src/stylus/*.styl'],
-                tasks: ['stylus:compile', 'csscomb:foo', 'cssmin:minify']
-            },
-
-            js: {
-                files: ['src/js/videoplayer.js'],
-                tasks: ['uglify']
+                tasks: ['stylus:compile']
             }
+
         },
 
         stylus: {
@@ -83,6 +79,6 @@ module.exports = function (grunt) {
 
     // Our tasks
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('comb', ['csscomb:foo', 'cssmin']);
+    grunt.registerTask('comb', ['csscomb:foo', 'cssmin', 'uglify']);
 
 };

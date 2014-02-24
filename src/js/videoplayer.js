@@ -12,6 +12,7 @@ function Video (video) {
 
     currentSkin = (this.skin && this.skins[this.skin]) ? {order: this.skins[this.skin], name: this.skin} : {order: this.skins.default, name: 'default'};
 
+    this.elem.controls = false;
     this.init(currentSkin);
 }
 
@@ -27,6 +28,7 @@ Video.prototype.skins = {
     'default': ['progress', 'play', 'mute', 'volume', 'time', 'allTime', 'fullscreen']
 };
 
+// Base properties each control
 Video.prototype.playerControls = {
     'progress': {
         'tag': 'progress',
