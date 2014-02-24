@@ -1,14 +1,14 @@
 {
-  "name": "GruntSetup",
+  "name": "HTML5VideoPlayer",
   "version": "0.0.1",
   "main": "Gruntfile.js",
   "author": "isnifer",
-  "description": "First Grunt Setup",
-  "homepage": "http://isnifer.me",
+  "description": "HTML5 Videoplayer",
+  "homepage": "http://kuznetsovanton.ru/games/videoapi/",
   "license": "MIT",
   "repository": { 
     "type": "git", 
-    "url": "https://github.com/iSnifer/grunt-boilerplate.git"
+    "url": "git@github.com:iSnifer/videoplayer.git"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
