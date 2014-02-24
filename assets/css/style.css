@@ -4,6 +4,9 @@
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+video {
+  vertical-align: top;
+}
 /* Page */
 html,
 body {

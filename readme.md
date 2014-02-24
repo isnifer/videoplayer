@@ -1,6 +1,6 @@
 ## HTML5 Video Player ##
 
-###[Demo](http://kuznetsovanton.ru/games/videoapi/demo.html) (23.02.2014 04:33:34)###
+###[Demo](http://kuznetsovanton.ru/games/videoapi/demo.html) (24.02.2014 12:56:34)###
 
 ### 1. Install dependencies ###
 ```bash
@@ -20,7 +20,7 @@ grunt comb
 You need "assets" folder for using. Insert style.min.css and videoplayer.min.js to page.
 ### 4. Use ###
 ```js
-var videos = new Player('video');
+var videoplayer = new Player('video');
 ```
 'video' - video element selector. It can be anything ('.player', '#player', etc).
 
